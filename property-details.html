@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - Kerala Real Estate</title>
+    <link rel="stylesheet" href="property-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR SECTION ==================== -->
+    <header class="details-header" id="details-header">
+        <nav class="details-nav" id="details-nav">
+            <!-- Logo and Brand -->
+            <a href="index.html" class="details-nav-brand" data-cms="details-brand">
+                <div class="details-brand-logo" data-cms="details-brand-logo">
+                    <img src="images/logo.png" alt="Real Estate Logo" class="details-logo-img">
+                </div>
+                <p class="details-brand-tagline" data-cms="details-brand-tagline">REAL ESTATE KERALA</p>
+            </a>
+            
+            <!-- Navigation Menu (Hidden initially, shows on scroll) -->
+            <div class="details-nav-menu" id="details-nav-menu">
+                <a href="index.html" class="details-nav-link" data-cms="details-nav-link-home">Home</a>
+                <a href="property.html" class="details-nav-link" data-cms="details-nav-link-properties">Houses & Plots</a>
+                <a href="blog.html" class="details-nav-link" data-cms="details-nav-link-blog">Blog</a>
+                <a href="about.html" class="details-nav-link" data-cms="details-nav-link-about">About</a>
+                <a href="contact.html" class="details-nav-link" data-cms="details-nav-link-contact">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="details-nav-toggle" id="details-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== BACK BUTTON SECTION ==================== -->
+    <section class="details-back-section">
+        <a href="property.html" class="details-back-link" data-cms="back-link">
+            <i class="fas fa-chevron-left"></i> Back to Properties
+        </a>
+    </section>
+
+    <!-- ==================== IMAGE SLIDER SECTION ==================== -->
+    <section class="details-slider-section" id="details-slider-section">
+        <div class="details-slider-container">
+            <!-- Main Slider -->
+            <div class="details-main-slider" id="main-slider">
+                <!-- Images will be loaded dynamically -->
+            </div>
+
+            <!-- Slider Controls -->
+            <button class="slider-control slider-prev" id="slider-prev" aria-label="Previous Image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-control slider-next" id="slider-next" aria-label="Next Image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Image Counter -->
+            <div class="slider-counter" id="slider-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">0</span>
+            </div>
+        </div>
+
+        <!-- Thumbnail Gallery (Hidden on mobile) -->
+        <div class="details-thumbnail-gallery" id="thumbnail-gallery">
+            <!-- Thumbnails will be loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- ==================== PROPERTY DETAILS SECTION ==================== -->
+    <section class="details-content-section">
+        <div class="details-content-container">
+            
+            <!-- Left Column: Property Information -->
+            <div class="details-left-column">
+                
+                <!-- Property Header -->
+                <div class="details-property-header">
+                    <h1 class="details-property-name" id="property-name" data-cms="property-name">
+                        <!-- Property name will be loaded dynamically -->
+                    </h1>
+                    <p class="details-property-location" id="property-location" data-cms="property-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <!-- Location will be loaded dynamically -->
+                    </p>
+                </div>
+
+                <!-- Property Specifications -->
+                <div class="details-specifications" id="property-specs" data-cms="property-specs">
+                    <h2 class="details-section-title">Property Specifications</h2>
+                    <div class="specs-grid" id="specs-grid">
+                        <!-- Specifications will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Property Description -->
+                <div class="details-description" id="property-description" data-cms="property-description">
+                    <h2 class="details-section-title">Description</h2>
+                    <div class="description-text" id="description-text">
+                        <!-- Description will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Amenities -->
+                <div class="details-amenities" id="property-amenities" data-cms="property-amenities">
+                    <h2 class="details-section-title">Amenities</h2>
+                    <div class="amenities-tags" id="amenities-tags">
+                        <!-- Amenities will be loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Nearby Landmarks & Other Features Row -->
+                <div class="details-features-row">
+                    <!-- Nearby Landmarks -->
+                    <div class="details-landmarks" id="property-landmarks" data-cms="property-landmarks">
+                        <h2 class="details-section-title">Nearby Landmarks</h2>
+                        <ul class="landmarks-list" id="landmarks-list">
+                            <!-- Landmarks will be loaded dynamically -->
+                        </ul>
+                    </div>
+
+                    <!-- Other Features -->
+                    <div class="details-other-features" id="property-other-features" data-cms="property-other-features">
+                        <h2 class="details-section-title">Other Features</h2>
+                        <ul class="features-list" id="features-list">
+                            <!-- Other features will be loaded dynamically -->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Sticky Enquiry Box -->
+            <div class="details-right-column">
+                <div class="details-enquiry-box" id="enquiry-box" data-cms="enquiry-box">
+                    <div class="enquiry-price" id="enquiry-price" data-cms="enquiry-price">
+                        <!-- Price will be loaded dynamically -->
+                    </div>
+                    
+                    <h3 class="enquiry-title" data-cms="enquiry-title">Interested in this property?</h3>
+                    
+                    <div class="enquiry-contact">
+                        <p class="enquiry-label" data-cms="enquiry-call-label">Call us</p>
+                        <a href="tel:+919876543210" class="enquiry-phone" data-cms="enquiry-phone-1">+91 98765 43210</a>
+                        <a href="tel:+919123456789" class="enquiry-phone" data-cms="enquiry-phone-2">+91 91234 56789</a>
+                    </div>
+
+                    <div class="enquiry-contact">
+                        <p class="enquiry-label" data-cms="enquiry-email-label">Email</p>
+                        <a href="mailto:orukachavadakaran@gmail.com" class="enquiry-email" data-cms="enquiry-email">
+                            orukachavadakaran@gmail.com
+                        </a>
+                    </div>
+
+                    <!-- Status Indicator Button -->
+                   <div class="status-indicator" id="status-indicator" data-cms="status-indicator">
+                    <!-- Status will be loaded dynamically -->
+                   </div>
+
+                    <button class="enquiry-button" onclick="window.location.href='contact.html'" data-cms="enquiry-button">
+                        Enquire Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== IMAGE LIGHTBOX (Full-screen preview) ==================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <button class="lightbox-control lightbox-prev" id="lightbox-prev" aria-label="Previous Image">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="lightbox-content">
+            <img src="" alt="Property Image" id="lightbox-image">
+        </div>
+        
+        <button class="lightbox-control lightbox-next" id="lightbox-next" aria-label="Next Image">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- ==================== FOOTER DIVIDER ==================== -->
+    <div class="details-footer-divider"></div>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="details-footer" id="details-footer">
+        <div class="details-footer-content">
+            <!-- Brand Column -->
+            <div class="details-footer-col details-footer-brand">
+                <h4 class="details-footer-logo" data-cms="footer-logo">ഒരു കച്ചവടക്കാരൻ</h4>
+                <p class="details-footer-desc" data-cms="footer-desc">
+                    Your trusted partner for finding the perfect home and land in Kerala. We bring local expertise and genuine care to every transaction.
+                </p>
+                <!-- Social Links -->
+                <div class="details-footer-social">
+                    <p class="details-footer-social-label" data-cms="footer-social-label">Follow Us:</p>
+                    <div class="details-social-icons">
+                        <a href="#" class="details-social-icon" data-cms="footer-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="details-social-icon" data-cms="footer-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="details-social-icon" data-cms="footer-whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="details-footer-col">
+                <h5 class="details-footer-heading" data-cms="footer-links-heading">Quick Links</h5>
+                <ul class="details-footer-links">
+                    <li><a href="index.html" data-cms="footer-link-home">Home</a></li>
+                    <li><a href="property.html" data-cms="footer-link-properties">Properties</a></li>
+                    <li><a href="blog.html" data-cms="footer-link-blog">Blog</a></li>
+                    <li><a href="about.html" data-cms="footer-link-about">About Us</a></li>
+                    <li><a href="contact.html" data-cms="footer-link-contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- We Serve Column -->
+            <div class="details-footer-col">
+                <h5 class="details-footer-heading" data-cms="footer-serve-heading">We Serve</h5>
+                <ul class="details-footer-locations">
+                    <li data-cms="footer-location-1">• Kottayam</li>
+                    <li data-cms="footer-location-2">• Kanjirappally</li>
+                    <li data-cms="footer-location-3">• Pala</li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="details-footer-col">
+                <h5 class="details-footer-heading" data-cms="footer-contact-heading">Contact</h5>
+                <ul class="details-footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-cms="footer-address">Kottayam, Kerala, India</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span data-cms="footer-phone">++91 8129952316<br>+91 7907269538</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span data-cms="footer-email">orukachavadakaran@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="details-footer-bottom">
+            <p data-cms="footer-copyright">
+                © 2025 ഒരു കച്ചവടക്കാരൻ | All Rights Reserved.
+            </p>
+            <div class="details-footer-legal">
+                <a href="privacy.html" data-cms="footer-privacy">Privacy Policy</a>
+                <a href="terms.html" data-cms="footer-terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include the property database -->
+    <script src="property-details-data.js"></script>
+    <!-- Include the page script -->
+    <script src="property-details.js"></script>
+</body>
+</html>

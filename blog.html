@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Kerala Real Estate Insights & Updates</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR SECTION ==================== -->
+    <header class="blog-header" id="blog-header">
+        <nav class="blog-nav" id="blog-nav">
+            <!-- Logo and Brand -->
+            <a href="index.html" class="blog-nav-brand" data-cms="blog-brand">
+                <div class="blog-brand-logo" data-cms="blog-brand-logo">
+                    <img src="images/logo.png" alt="Real Estate Logo" class="blog-logo-img">
+                </div>
+                <p class="blog-brand-tagline" data-cms="blog-brand-tagline">REAL ESTATE KERALA</p>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <div class="blog-nav-menu" id="blog-nav-menu">
+                <a href="index.html" class="blog-nav-link" data-cms="blog-nav-link-home">Home</a>
+                <a href="property.html" class="blog-nav-link" data-cms="blog-nav-link-properties">Houses & Plots</a>
+                <a href="blog.html" class="blog-nav-link active" data-cms="blog-nav-link-blog">Blog</a>
+                <a href="about.html" class="blog-nav-link" data-cms="blog-nav-link-about">About</a>
+                <a href="contact.html" class="blog-nav-link" data-cms="blog-nav-link-contact">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="blog-nav-toggle" id="blog-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="blog-hero" id="blog-hero">
+        <div class="blog-hero-content">
+            <p class="blog-hero-label" data-cms="blog-hero-label">OUR BLOG</p>
+            <h1 class="blog-hero-title" data-cms="blog-hero-title">
+                Real Estate Insights & Updates
+            </h1>
+            <p class="blog-hero-desc" data-cms="blog-hero-desc">
+                Stay informed with the latest trends, tips, and insights about real estate in Kerala.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== BLOG PREVIEW CARDS SECTION ==================== -->
+    <section class="blog-preview-section" id="blog-preview-section">
+        <div class="blog-preview-grid">
+            
+            <!-- 
+            ==================== GUIDE TO ADD NEW BLOG ====================
+            
+            To add a new blog, follow these steps:
+            
+            1. Add a BLOG PREVIEW CARD in this section with:
+               - Unique data-blog-id (e.g., "blog-4")
+               - Image, category tag, date, title, short description
+               - "Read More" button with onclick="scrollToBlog('blog-4')"
+            
+            2. Add a DETAILED BLOG ARTICLE below in the detailed section with:
+               - Same data-blog-id as preview card
+               - Gradient category tag, date, title, full content
+               - "Share" button at bottom
+            
+            IMPORTANT: Make sure data-blog-id matches between preview card and detailed article!
+            
+            ============================================================
+            -->
+
+            <!-- Blog Preview Card 1 -->
+            <div class="blog-preview-card" data-blog-id="blog-1" data-cms="blog-preview-1">
+                <div class="blog-preview-image">
+                    <img src="images/top-5-location-to-buy-kottayam.jpg" alt="Top 5 Locations" data-cms="blog-1-preview-image">
+                    <span class="blog-preview-tag blog-tag-market" data-cms="blog-1-tag">Market Insights</span>
+                </div>
+                <div class="blog-preview-content">
+                    <p class="blog-preview-date" data-cms="blog-1-date">
+                        <i class="far fa-calendar"></i> October 1, 2025
+                    </p>
+                    <h3 class="blog-preview-title" data-cms="blog-1-preview-title">
+                        Top 5 Locations to Buy Property in Kottayam District
+                    </h3>
+                    <p class="blog-preview-desc" data-cms="blog-1-preview-desc">
+                        Discover the most promising areas in Kottayam district for real estate investment. From Pala to Kanjirappally, we explore the...
+                    </p>
+                    <button class="blog-read-more" onclick="scrollToBlog('blog-1')" data-cms="blog-1-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Blog Preview Card 2 -->
+            <div class="blog-preview-card" data-blog-id="blog-2" data-cms="blog-preview-2">
+                <div class="blog-preview-image">
+                    <img src="images/checklist-for-buying-house-kerala.jpg" alt="Buying Checklist" data-cms="blog-2-preview-image">
+                    <span class="blog-preview-tag blog-tag-guide" data-cms="blog-2-tag">Buying Guide</span>
+                </div>
+                <div class="blog-preview-content">
+                    <p class="blog-preview-date" data-cms="blog-2-date">
+                        <i class="far fa-calendar"></i> September 28, 2025
+                    </p>
+                    <h3 class="blog-preview-title" data-cms="blog-2-preview-title">
+                        Essential Checklist Before Buying a House in Kerala
+                    </h3>
+                    <p class="blog-preview-desc" data-cms="blog-2-preview-desc">
+                        A comprehensive guide to help you make an informed decision when purchasing your dream home in Kerala. Learn about legal...
+                    </p>
+                    <button class="blog-read-more" onclick="scrollToBlog('blog-2')" data-cms="blog-2-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Blog Preview Card 3 -->
+            <div class="blog-preview-card" data-blog-id="blog-3" data-cms="blog-preview-3">
+                <div class="blog-preview-image">
+                    <img src="images/investment-potential-for-buying.jpg" alt="Investment Potential" data-cms="blog-3-preview-image">
+                    <span class="blog-preview-tag blog-tag-investment" data-cms="blog-3-tag">Investment Tips</span>
+                </div>
+                <div class="blog-preview-content">
+                    <p class="blog-preview-date" data-cms="blog-3-date">
+                        <i class="far fa-calendar"></i> September 20, 2025
+                    </p>
+                    <h3 class="blog-preview-title" data-cms="blog-3-preview-title">
+                        Investment Potential: Plots vs Ready-Built Houses
+                    </h3>
+                    <p class="blog-preview-desc" data-cms="blog-3-preview-desc">
+                        Confused between buying a plot to build your own home or purchasing a ready-built house? We break down the pros and cons of...
+                    </p>
+                    <button class="blog-read-more" onclick="scrollToBlog('blog-3')" data-cms="blog-3-read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== DETAILED BLOG ARTICLES SECTION ==================== -->
+    <section class="blog-detailed-section" id="blog-detailed-section">
+
+        <!-- Detailed Blog Article 1 -->
+        <article class="blog-article" id="blog-1" data-cms="blog-article-1">
+            <div class="blog-article-header">
+                <img src="images/top-5-location-to-buy-kottayam.jpg" alt="Top 5 Locations" class="blog-article-image" data-cms="blog-1-image">
+                <div class="blog-article-overlay">
+                    <span class="blog-article-tag blog-tag-market" data-cms="blog-1-article-tag">
+                        <i class="fas fa-chart-line"></i> Market Insights
+                    </span>
+                    <p class="blog-article-date" data-cms="blog-1-article-date">
+                        <i class="far fa-calendar"></i> October 1, 2025
+                    </p>
+                    <h2 class="blog-article-title" data-cms="blog-1-article-title">
+                        Top 5 Locations to Buy Property in Kottayam District
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="blog-article-content" data-cms="blog-1-content">
+                <p>Kottayam district is emerging as one of the most sought-after real estate destinations in Kerala. With its rich cultural heritage, excellent infrastructure, and natural beauty, the region offers immense opportunities for property buyers.</p>
+
+                <h3>1. Pala - Known for its educational institutions and healthcare facilities, Pala is a prime location for families. Property values here have shown steady appreciation over the years.</h3>
+
+                <h3>2. Kanjirappally - This town offers a perfect blend of urban convenience and rural charm. With good connectivity and affordable prices, it's ideal for first-time buyers.</h3>
+
+                <h3>3. Kottayam Town - The district headquarters offers excellent infrastructure, connectivity, and all modern amenities. Properties here are in high demand.</h3>
+
+                <h3>4. Changanassery - A rapidly developing area with good schools, hospitals, and commercial establishments. Great for both residential and commercial investments.</h3>
+
+                <h3>5. Ettumanoor - Located on the MC Road, this area offers excellent connectivity and is seeing rapid development with new residential projects.</h3>
+            </div>
+
+            <div class="blog-article-footer">
+                <p class="blog-helpful-text">Found this helpful?</p>
+                <button class="blog-share-btn" onclick="shareBlog('blog-1')" data-cms="blog-1-share">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+        </article>
+
+        <!-- Detailed Blog Article 2 -->
+        <article class="blog-article" id="blog-2" data-cms="blog-article-2">
+            <div class="blog-article-header">
+                <img src="images/checklist-for-buying-house-kerala.jpg" alt="Buying Checklist" class="blog-article-image" data-cms="blog-2-image">
+                <div class="blog-article-overlay">
+                    <span class="blog-article-tag blog-tag-guide" data-cms="blog-2-article-tag">
+                        <i class="fas fa-book-open"></i> Buying Guide
+                    </span>
+                    <p class="blog-article-date" data-cms="blog-2-article-date">
+                        <i class="far fa-calendar"></i> September 28, 2025
+                    </p>
+                    <h2 class="blog-article-title" data-cms="blog-2-article-title">
+                        Essential Checklist Before Buying a House in Kerala
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="blog-article-content" data-cms="blog-2-content">
+                <p>Buying a house is one of the biggest financial decisions you'll make. Here's a comprehensive checklist to guide you through the process:</p>
+
+                <h3>Legal Documentation:</h3>
+                <p>- Verify ownership documents and title deeds<br>
+                - Check for any pending litigation or legal disputes<br>
+                - Ensure proper succession certificates if inherited property<br>
+                - Verify tax payment receipts</p>
+
+                <h3>Property Verification:</h3>
+                <p>- Conduct thorough physical inspection<br>
+                - Check for structural integrity and quality of construction<br>
+                - Verify measurements match with documents<br>
+                - Check water supply and drainage systems</p>
+
+                <h3>Location Factors:</h3>
+                <p>- Proximity to schools, hospitals, and markets<br>
+                - Public transportation connectivity<br>
+                - Future development plans in the area<br>
+                - Flood-prone areas to avoid</p>
+
+                <h3>Financial Planning:</h3>
+                <p>- Compare loan options from different banks<br>
+                - Factor in registration costs and stamp duty<br>
+                - Plan for renovation/furnishing expenses<br>
+                - Keep buffer for unexpected costs</p>
+            </div>
+
+            <div class="blog-article-footer">
+                <p class="blog-helpful-text">Found this helpful?</p>
+                <button class="blog-share-btn" onclick="shareBlog('blog-2')" data-cms="blog-2-share">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+        </article>
+
+        <!-- Detailed Blog Article 3 -->
+        <article class="blog-article" id="blog-3" data-cms="blog-article-3">
+            <div class="blog-article-header">
+                <img src="images/investment-potential-for-buying.jpg" alt="Investment Potential" class="blog-article-image" data-cms="blog-3-image">
+                <div class="blog-article-overlay">
+                    <span class="blog-article-tag blog-tag-investment" data-cms="blog-3-article-tag">
+                        <i class="fas fa-chart-pie"></i> Investment Tips
+                    </span>
+                    <p class="blog-article-date" data-cms="blog-3-article-date">
+                        <i class="far fa-calendar"></i> September 20, 2025
+                    </p>
+                    <h2 class="blog-article-title" data-cms="blog-3-article-title">
+                        Investment Potential: Plots vs Ready-Built Houses
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="blog-article-content" data-cms="blog-3-content">
+                <p>When it comes to real estate investment, the choice between buying a plot or a ready-built house depends on various factors:</p>
+
+                <h3>Advantages of Buying Plots:</h3>
+                <p>- Greater flexibility in design and construction<br>
+                - Lower initial investment<br>
+                - Potential for higher appreciation in prime locations<br>
+                - Build according to your specific requirements<br>
+                - Can time construction based on financial situation</p>
+
+                <h3>Advantages of Ready-Built Houses:</h3>
+                <p>- Immediate occupancy<br>
+                - No construction hassles<br>
+                - Clear idea of final product<br>
+                - Often come with established amenities<br>
+                - Easier to get home loans</p>
+
+                <h3>Financial Considerations:</h3>
+                <p>- Plot + Construction may be more economical in the long run<br>
+                - Ready houses have predictable costs<br>
+                - Construction loans vs home loans have different terms<br>
+                - Property taxes differ based on development</p>
+
+                <p>For investors looking at appreciation, plots in developing areas often offer better returns. However, for those seeking immediate accommodation or rental income, ready-built houses are more suitable.</p>
+            </div>
+
+            <div class="blog-article-footer">
+                <p class="blog-helpful-text">Found this helpful?</p>
+                <button class="blog-share-btn" onclick="shareBlog('blog-3')" data-cms="blog-3-share">
+                    <i class="fas fa-share-alt"></i> Share
+                </button>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- ==================== FOOTER DIVIDER ==================== -->
+    <div class="blog-footer-divider"></div>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="blog-footer" id="blog-footer">
+        <div class="blog-footer-content">
+            <!-- Brand Column -->
+            <div class="blog-footer-col blog-footer-brand">
+                <h4 class="blog-footer-logo" data-cms="footer-logo">ഒരു കച്ചവടക്കാരൻ</h4>
+                <p class="blog-footer-desc" data-cms="footer-desc">
+                    Your trusted partner for finding the perfect home and land in Kerala. We bring local expertise and genuine care to every transaction.
+                </p>
+                <!-- Social Links -->
+                <div class="blog-footer-social">
+                    <p class="blog-footer-social-label" data-cms="footer-social-label">Follow Us:</p>
+                    <div class="blog-social-icons">
+                        <a href="#" class="blog-social-icon" data-cms="footer-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="blog-social-icon" data-cms="footer-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="blog-social-icon" data-cms="footer-whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="blog-footer-col">
+                <h5 class="blog-footer-heading" data-cms="footer-links-heading">Quick Links</h5>
+                <ul class="blog-footer-links">
+                    <li><a href="index.html" data-cms="footer-link-home">Home</a></li>
+                    <li><a href="property.html" data-cms="footer-link-properties">Properties</a></li>
+                    <li><a href="blog.html" data-cms="footer-link-blog">Blog</a></li>
+                    <li><a href="about.html" data-cms="footer-link-about">About Us</a></li>
+                    <li><a href="contact.html" data-cms="footer-link-contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- We Serve Column -->
+            <div class="blog-footer-col">
+                <h5 class="blog-footer-heading" data-cms="footer-serve-heading">We Serve</h5>
+                <ul class="blog-footer-locations">
+                    <li data-cms="footer-location-1">• Kottayam</li>
+                    <li data-cms="footer-location-2">• Kanjirappally</li>
+                    <li data-cms="footer-location-3">• Pala</li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="blog-footer-col">
+                <h5 class="blog-footer-heading" data-cms="footer-contact-heading">Contact</h5>
+                <ul class="blog-footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-cms="footer-address">Kottayam, Kerala, India</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span data-cms="footer-phone">+91 8129952316<br>+91 7907269538</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span data-cms="footer-email">orukachavadakkaran@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="blog-footer-bottom">
+            <p data-cms="footer-copyright">
+                © 2025 ഒരു കച്ചവടക്കാരൻ | All Rights Reserved.
+            </p>
+            <div class="blog-footer-legal">
+                <a href="privacy.html" data-cms="footer-privacy">Privacy Policy</a>
+                <a href="terms.html" data-cms="footer-terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Real Estate | Find Your Perfect Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR SECTION ==================== -->
+    <header class="home-header" id="home-header">
+        <nav class="home-nav" id="home-nav">
+            <!-- Logo and Brand (Clickable - redirects to home) -->
+            <a href="index.html" class="home-nav-brand" data-cms="home-brand">
+                <!-- Logo Image: 120px width x 50px height -->
+                <div class="home-brand-logo" data-cms="home-brand-logo">
+                    <img src="images/logo.png" alt="Real Estate Logo" class="home-logo-img">
+                </div>
+                <p class="home-brand-tagline" data-cms="home-brand-tagline">REAL ESTATE KERALA</p>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <div class="home-nav-menu" id="home-nav-menu">
+                <a href="index.html" class="home-nav-link active" data-cms="home-nav-link-home">Home</a>
+                <a href="property.html" class="home-nav-link" data-cms="home-nav-link-properties">Houses & Plots</a>
+                <a href="blog.html" class="home-nav-link" data-cms="home-nav-link-blog">Blog</a>
+                <a href="about.html" class="home-nav-link" data-cms="home-nav-link-about">About</a>
+                <a href="contact.html" class="home-nav-link" data-cms="home-nav-link-contact">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle (Hamburger) -->
+            <div class="home-nav-toggle" id="home-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="home-hero" id="home-hero">
+        <div class="home-hero-overlay"></div>
+        <div class="home-hero-container">
+            <div class="home-hero-content">
+                <!-- Non-clickable badge -->
+                <span class="home-hero-badge" data-cms="home-hero-badge">Kerala's Trusted Real Estate</span>
+                
+                <h2 class="home-hero-title" data-cms="home-hero-title">
+                     Finding your <span class="highlight">perfect home</span> and <span class="highlight">land</span> in <span class="highlight">Kerala</span>
+                 </h2>
+                
+                <p class="home-hero-desc" data-cms="home-hero-desc">
+                    We are entrepreneurs helping you find affordable plots and houses in <strong>Kottayam, Kanjirappally, and Pala</strong>.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="home-hero-cta">
+                    <button class="btn-primary" id="home-explore-houses-btn" data-cms="home-btn-houses">
+                        Explore Houses <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="btn-secondary" id="home-view-plots-btn" data-cms="home-btn-plots">
+                        View Plots <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Stats (Non-clickable) -->
+                <div class="home-hero-stats" data-cms="home-hero-stats">
+                    <div class="home-stat">
+                        <h3 class="home-stat-number" data-cms="home-stat-properties">50+</h3>
+                        <p class="home-stat-label" data-cms="home-stat-properties-label">Properties</p>
+                    </div>
+                    <div class="home-stat">
+                        <h3 class="home-stat-number" data-cms="home-stat-clients">100+</h3>
+                        <p class="home-stat-label" data-cms="home-stat-clients-label">Happy Clients</p>
+                    </div>
+                    <div class="home-stat">
+                        <h3 class="home-stat-number" data-cms="home-stat-locations">3</h3>
+                        <p class="home-stat-label" data-cms="home-stat-locations-label">Locations</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rating Badge (Only in hero section) -->
+            <div class="home-rating-badge" data-cms="home-rating">
+                <div class="home-rating-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="home-rating-content">
+                    <p class="home-rating-title" data-cms="home-rating-title">Top Rated</p>
+                    <p class="home-rating-value" data-cms="home-rating-value">4.9 Rating</p>
+                    <p class="home-rating-desc" data-cms="home-rating-desc">Trusted by hundreds of families across Kerala</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US SECTION ==================== -->
+    <section class="home-why-choose" id="home-why-choose">
+        <div class="home-section-header">
+            <p class="home-section-label" data-cms="why-choose-label">OUR ADVANTAGES</p>
+            <h3 class="home-section-title" data-cms="why-choose-title">Why Choose Us</h3>
+            <p class="home-section-desc" data-cms="why-choose-desc">
+                We provide trustworthy real estate services with a personal touch
+            </p>
+        </div>
+
+        <div class="home-features-grid">
+            <!-- Feature Card 1 -->
+            <div class="home-feature-card" data-cms="feature-1">
+                <div class="home-feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="home-feature-title" data-cms="feature-1-title">Affordable Prices</h4>
+                <p class="home-feature-desc" data-cms="feature-1-desc">
+                    Competitive pricing on all properties with transparent dealings.
+                </p>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="home-feature-card" data-cms="feature-2">
+                <div class="home-feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4 class="home-feature-title" data-cms="feature-2-title">Verified Listings</h4>
+                <p class="home-feature-desc" data-cms="feature-2-desc">
+                    Every property is verified and authenticated by our team.
+                </p>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="home-feature-card" data-cms="feature-3">
+                <div class="home-feature-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h4 class="home-feature-title" data-cms="feature-3-title">Trusted Locals</h4>
+                <p class="home-feature-desc" data-cms="feature-3-desc">
+                    We are local entrepreneurs who understand the Kerala market.
+                </p>
+            </div>
+
+            <!-- Feature Card 4 -->
+            <div class="home-feature-card" data-cms="feature-4">
+                <div class="home-feature-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h4 class="home-feature-title" data-cms="feature-4-title">Easy Deals</h4>
+                <p class="home-feature-desc" data-cms="feature-4-desc">
+                    Simple and hassle-free property buying process.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURED PROPERTIES SECTION ==================== -->
+    <section class="home-featured" id="home-featured">
+        <div class="home-section-header">
+            <p class="home-section-label" data-cms="featured-label">OUR COLLECTION</p>
+            <h3 class="home-section-title" data-cms="featured-title">Featured Properties</h3>
+            <p class="home-section-desc" data-cms="featured-desc">
+                Discover our handpicked selection of premium properties
+            </p>
+        </div>
+
+        <div class="home-properties-grid">
+            <!-- Property Card 1 -->
+            <div class="home-property-card" data-cms="property-1">
+                <div class="home-property-image">
+                    <img src="images/property/101-first.jpg" alt="3BHK Modern Villa" data-cms="property-1-image">
+                    <span class="home-property-badge" data-cms="property-1-badge">House</span>
+                    <span class="home-property-location" data-cms="property-1-location">
+                        <i class="fas fa-map-marker-alt"></i> Pala
+                    </span>
+                </div>
+                <div class="home-property-content">
+                    <h4 class="home-property-title" data-cms="property-1-title">3BHK Modern Villa</h4>
+                    <p class="home-property-desc" data-cms="property-1-desc">
+                        Beautiful modern villa with contemporary architecture and spacious rooms.
+                    </p>
+                    <div class="home-property-footer">
+                        <span class="home-property-price" data-cms="property-1-price">₹48,00,000</span>
+                        <button class="btn-details" data-cms="property-1-btn">
+                            Details <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Card 2 (Middle - offset down) -->
+            <div class="home-property-card home-property-middle" data-cms="property-2">
+                <div class="home-property-image">
+                    <img src="images/property/102-first.jpg" alt="Traditional Kerala Home" data-cms="property-2-image">
+                    <span class="home-property-badge" data-cms="property-2-badge">House</span>
+                    <span class="home-property-location" data-cms="property-2-location">
+                        <i class="fas fa-map-marker-alt"></i> Pala
+                    </span>
+                </div>
+                <div class="home-property-content">
+                    <h4 class="home-property-title" data-cms="property-2-title">Spacious 3BHK Contemporary Villa</h4>
+                    <p class="home-property-desc" data-cms="property-2-desc">
+                        Stylish villa with modern architecture and generously sized rooms.
+                    </p>
+                    <div class="home-property-footer">
+                        <span class="home-property-price" data-cms="property-2-price">₹75,00,000</span>
+                        <button class="btn-details" data-cms="property-2-btn">
+                            Details <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Card 3 -->
+            <div class="home-property-card" data-cms="property-1">
+                <div class="home-property-image">
+                    <img src="images/property/101-first.jpg" alt="3BHK Modern Villa" data-cms="property-1-image">
+                    <span class="home-property-badge" data-cms="property-1-badge">House</span>
+                    <span class="home-property-location" data-cms="property-1-location">
+                        <i class="fas fa-map-marker-alt"></i> Pala
+                    </span>
+                </div>
+                <div class="home-property-content">
+                    <h4 class="home-property-title" data-cms="property-1-title">3BHK Modern Villa</h4>
+                    <p class="home-property-desc" data-cms="property-1-desc">
+                        Beautiful modern villa with contemporary architecture and spacious rooms.
+                    </p>
+                    <div class="home-property-footer">
+                        <span class="home-property-price" data-cms="property-1-price">₹48,00,000</span>
+                        <button class="btn-details" data-cms="property-1-btn">
+                            Details <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="home-featured-cta">
+            <button class="btn-view-all" id="home-view-all-btn" data-cms="view-all-btn">
+                View All Properties
+            </button>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER DIVIDER (Curved partition) ==================== -->
+    <div class="home-footer-divider"></div>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="home-footer" id="home-footer">
+        <div class="home-footer-content">
+            <!-- Brand Column -->
+            <div class="home-footer-col home-footer-brand">
+                <h4 class="home-footer-logo" data-cms="footer-logo">ഒരു കച്ചവടക്കാരൻ</h4>
+                <p class="home-footer-desc" data-cms="footer-desc">
+                    Your trusted partner for finding the perfect home and land in Kerala. We bring local expertise and genuine care to every transaction.
+                </p>
+                <!-- Social Links -->
+                <div class="home-footer-social">
+                    <p class="home-footer-social-label" data-cms="footer-social-label">Follow Us:</p>
+                    <div class="home-social-icons">
+                        <a href="#" class="home-social-icon" data-cms="footer-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="home-social-icon" data-cms="footer-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="home-social-icon" data-cms="footer-whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="home-footer-col">
+                <h5 class="home-footer-heading" data-cms="footer-links-heading">Quick Links</h5>
+                <ul class="home-footer-links">
+                    <li><a href="index.html" data-cms="footer-link-home">Home</a></li>
+                    <li><a href="properties.html" data-cms="footer-link-properties">Properties</a></li>
+                    <li><a href="blog.html" data-cms="footer-link-blog">Blog</a></li>
+                    <li><a href="about.html" data-cms="footer-link-about">About Us</a></li>
+                    <li><a href="contact.html" data-cms="footer-link-contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- We Serve Column -->
+            <div class="home-footer-col">
+                <h5 class="home-footer-heading" data-cms="footer-serve-heading">We Serve</h5>
+                <ul class="home-footer-locations">
+                    <li data-cms="footer-location-1">• Kottayam</li>
+                    <li data-cms="footer-location-2">• Kanjirappally</li>
+                    <li data-cms="footer-location-3">• Pala</li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="home-footer-col">
+                <h5 class="home-footer-heading" data-cms="footer-contact-heading">Contact</h5>
+                <ul class="home-footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-cms="footer-address">Kottayam, Kerala, India</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span data-cms="footer-phone">+91 8129952316<br>+91 7907269538</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span data-cms="footer-email">orukachavadakkaran@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="home-footer-bottom">
+            <p data-cms="footer-copyright">
+                © 2025 ഒരു കച്ചവടക്കാരൻ | All Rights Reserved.
+            </p>
+            <div class="home-footer-legal">
+                <a href="privacy.html" data-cms="footer-privacy">Privacy Policy</a>
+                <a href="terms.html" data-cms="footer-terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>

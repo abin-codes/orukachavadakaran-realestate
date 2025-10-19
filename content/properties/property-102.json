@@ -1,0 +1,26 @@
+{
+  "property_id": "102",
+  "name": "3BHK Villa",
+  "type": "House",
+  "status": "negotiation",
+  "price": 55,
+  "priceDisplay": "₹75,00,000 (Negotiable)",
+  "featured_image": "images/property/102-first.jpg",
+  "additional_images": [
+    "images/property/102-second.jpg",
+    "images/property/102-third.jpg"
+  ],
+  "location_city": "Pala",
+  "location_full": "Pala, Kottayam, Kerala",
+  "short_description": "Stylish villa with modern architecture and generously sized rooms.",
+  "long_description": "Experience authentic Kerala living in this beautifully maintained villa. Designed to blend tradition and modern comfort, it offers generous space and elegant finishes for perfect family living.",
+  "builtUpArea": "1700 sq ft",
+  "plotSize": "9.50 cents",
+  "bedrooms": 3,
+  "bathrooms": 3,
+  "floors": 1,
+  "amenities": ["Car Parking", "Modern Kitchen", "Premium Flooring"],
+  "nearbyLandmarks": ["Hospital - 3.5km", "Pala Town - 4.8km", "Church - 3.3km"],
+  "otherFeatures": ["Modern Architecture", "Peaceful Location", "Good Ventilation"],
+  "date_added": "2025-10-05"
+}

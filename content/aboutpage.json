@@ -1,0 +1,91 @@
+{
+  "about_brand_logo": "images/logo.png",
+  "about_brand_tagline": "REAL ESTATE KERALA",
+  "about_nav_link_home": "Home",
+  "about_nav_link_properties": "Houses & Plots",
+  "about_nav_link_blog": "Blog",
+  "about_nav_link_about": "About",
+  "about_nav_link_contact": "Contact",
+  
+  "about_hero_label": "WHO WE ARE",
+  "about_hero_title": "Young entrepreneurs passionate about real estate",
+  "about_hero_desc": "We're on a mission to transform the property buying experience in Kerala through transparency, technology, and genuine care.",
+  
+  "about_stat_1_number": "100+",
+  "about_stat_1_label": "Enquiries",
+  "about_stat_2_number": "50+",
+  "about_stat_2_label": "Properties Listed",
+  "about_stat_3_number": "1+",
+  "about_stat_3_label": "Years Experience",
+  "about_stat_4_number": "3",
+  "about_stat_4_label": "Locations Served",
+  
+  "about_journey_image": "images/about-journey-img.jpg",
+  "about_satisfaction_number": "95%",
+  "about_satisfaction_label": "Client Satisfaction",
+  "about_journey_label": "OUR JOURNEY",
+  "about_journey_title": "Transforming Real Estate in Kerala",
+  "about_journey_text": "We started **ഒരു കച്ചവടക്കാരൻ** with a simple yet powerful mission: to make property buying accessible, transparent, and hassle-free for everyone in Kerala.\n\nAs young entrepreneurs from Kottayam, we noticed the challenges people face when searching for their dream homes or investment properties. The process was often complicated, filled with uncertainties, and lacked transparency.\n\nWe decided to change that. With our deep understanding of the local market, commitment to honesty, and passion for helping people, we've built a platform that puts you first.\n\nEvery property we list is personally verified, every deal is transparent, and every client is treated like family. That's the **ഒരു കച്ചവടക്കാരൻ** promise.",
+  "about_work_btn": "Work With Us",
+  
+  "about_team_label": "MEET THE TEAM",
+  "about_team_title": "Our Team",
+  "about_team_desc": "Passionate professionals dedicated to helping you find your perfect property",
+  
+  "team_1_image": "images/founders/owner-1.jpg",
+  "team_1_name": "Albe Philip",
+  "team_1_role": "Co-Founder",
+  
+  "team_2_image": "images/founders/owner-2.jpg",
+  "team_2_name": "Jerin Joshy",
+  "team_2_role": "Co-Founder",
+  
+  "team_3_image": "images/founders/owner-3.jpg",
+  "team_3_name": "Delvin Siby",
+  "team_3_role": "Co-Founder",
+  
+  "about_values_label": "WHAT DRIVES US",
+  "about_values_title": "Our Core Values",
+  "about_values_desc": "The principles that guide everything we do",
+  
+  "value_1_title": "Customer First",
+  "value_1_desc": "We prioritize your needs and work tirelessly to find you the perfect property.",
+  
+  "value_2_title": "Local Expertise",
+  "value_2_desc": "Deep understanding of Kerala real estate market and local regulations.",
+  
+  "value_3_title": "Transparency",
+  "value_3_desc": "Honest dealings with no hidden costs or surprises.",
+  
+  "value_4_title": "Quality Service",
+  "value_4_desc": "Verified properties and dedicated support throughout your journey.",
+  
+  "about_cta_title": "Ready to find your dream property?",
+  "about_cta_desc": "Let us help you navigate the Kerala real estate market with confidence and transparency.",
+  "about_cta_contact": "Get in Touch",
+  "about_cta_properties": "Browse Properties",
+  
+  "footer_logo": "ഒരു കച്ചവടക്കാരൻ",
+  "footer_desc": "Your trusted partner for finding the perfect home and land in Kerala. We bring local expertise and genuine care to every transaction.",
+  "footer_social_label": "Follow Us:",
+  "footer_facebook": "#",
+  "footer_instagram": "#",
+  "footer_whatsapp": "#",
+  "footer_links_heading": "Quick Links",
+  "footer_link_home": "Home",
+  "footer_link_properties": "Properties",
+  "footer_link_blog": "Blog",
+  "footer_link_about": "About Us",
+  "footer_link_contact": "Contact",
+  "footer_serve_heading": "We Serve",
+  "footer_location_1": "• Kottayam",
+  "footer_location_2": "• Kanjirappally",
+  "footer_location_3": "• Pala",
+  "footer_contact_heading": "Contact",
+  "footer_address": "Kottayam, Kerala, India",
+  "footer_phone": "+91 8129952316<br>+91 7907269538",
+  "footer_email": "orukachavadakkaran@gmail.com",
+  "footer_copyright": "© 2025 ഒരു കച്ചവടക്കാരൻ | All Rights Reserved.",
+  "footer_privacy": "Privacy Policy",
+  "footer_terms": "Terms of Service"
+}

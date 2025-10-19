@@ -1,0 +1,1542 @@
+# ================================================
+# CMS Configuration - Full Homepage Settings
+# ================================================
+
+backend:
+  name: github
+  repo: abin-codes/orukachavadakaran-realestate  # Replace with your GitHub repo info
+  branch: main
+
+media_folder: "images"                  # Folder where images are stored
+public_folder: "/images"                # Path for images in website
+
+collections:
+  - name: "homepage_content"            # Single file for all homepage data
+    label: "Homepage Content"
+    files:
+      - file: "content/homepage.json"   # Path to the JSON content file
+        label: "Home Page"
+        name: "homepage"
+        fields:                          # IMPORTANT: All fields go inside 'fields:'
+          
+          # ================= HEADER / NAVBAR =================
+          - label: "Logo Image"
+            name: "home_brand_logo"
+            widget: "image"
+            hint: "Logo in header/navbar"
+
+          - label: "Brand Tagline"
+            name: "home_brand_tagline"
+            widget: "string"
+
+          - label: "Navigation Link - Home"
+            name: "home_nav_link_home"
+            widget: "string"
+
+          - label: "Navigation Link - Houses & Plots"
+            name: "home_nav_link_properties"
+            widget: "string"
+
+          - label: "Navigation Link - Blog"
+            name: "home_nav_link_blog"
+            widget: "string"
+
+          - label: "Navigation Link - About"
+            name: "home_nav_link_about"
+            widget: "string"
+
+          - label: "Navigation Link - Contact"
+            name: "home_nav_link_contact"
+            widget: "string"
+
+          # ================= HERO SECTION =================
+          - label: "Hero Badge Text"
+            name: "home_hero_badge"
+            widget: "string"
+
+          - label: "Hero Title"
+            name: "home_hero_title"
+            widget: "text"
+
+          - label: "Hero Description"
+            name: "home_hero_desc"
+            widget: "text"
+
+          - label: "Explore Houses Button Text"
+            name: "home_btn_houses"
+            widget: "string"
+
+          - label: "View Plots Button Text"
+            name: "home_btn_plots"
+            widget: "string"
+
+          # ================= HERO STATS =================
+          - label: "Number of Properties"
+            name: "home_stat_properties"
+            widget: "number"
+
+          - label: "Properties Label"
+            name: "home_stat_properties_label"
+            widget: "string"
+
+          - label: "Number of Happy Clients"
+            name: "home_stat_clients"
+            widget: "number"
+
+          - label: "Happy Clients Label"
+            name: "home_stat_clients_label"
+            widget: "string"
+
+          - label: "Number of Locations"
+            name: "home_stat_locations"
+            widget: "number"
+
+          - label: "Locations Label"
+            name: "home_stat_locations_label"
+            widget: "string"
+
+          # ================= RATING BADGE =================
+          - label: "Rating Title"
+            name: "home_rating_title"
+            widget: "string"
+
+          - label: "Rating Value"
+            name: "home_rating_value"
+            widget: "string"
+
+          - label: "Rating Description"
+            name: "home_rating_desc"
+            widget: "text"
+
+          # ================= WHY CHOOSE US =================
+          - label: "Advantages Label"
+            name: "why_choose_label"
+            widget: "string"
+
+          - label: "Advantages Title"
+            name: "why_choose_title"
+            widget: "string"
+
+          - label: "Advantages Description"
+            name: "why_choose_desc"
+            widget: "text"
+
+          # ================= FEATURED PROPERTIES =================
+          - label: "Featured Section Label"
+            name: "featured_label"
+            widget: "string"
+
+          - label: "Featured Section Title"
+            name: "featured_title"
+            widget: "string"
+
+          - label: "Featured Section Description"
+            name: "featured_desc"
+            widget: "text"
+
+          # Property 1 details
+          - label: "Property 1 Image"
+            name: "property_1_image"
+            widget: "image"
+
+          - label: "Property 1 Badge"
+            name: "property_1_badge"
+            widget: "string"
+
+          - label: "Property 1 Location"
+            name: "property_1_location"
+            widget: "string"
+
+          - label: "Property 1 Title"
+            name: "property_1_title"
+            widget: "string"
+
+          - label: "Property 1 Description"
+            name: "property_1_desc"
+            widget: "text"
+
+          - label: "Property 1 Price"
+            name: "property_1_price"
+            widget: "string"
+
+          # Property 2 details
+          - label: "Property 2 Image"
+            name: "property_2_image"
+            widget: "image"
+
+          - label: "Property 2 Badge"
+            name: "property_2_badge"
+            widget: "string"
+
+          - label: "Property 2 Location"
+            name: "property_2_location"
+            widget: "string"
+
+          - label: "Property 2 Title"
+            name: "property_2_title"
+            widget: "string"
+
+          - label: "Property 2 Description"
+            name: "property_2_desc"
+            widget: "text"
+
+          - label: "Property 2 Price"
+            name: "property_2_price"
+            widget: "string"
+
+          # ================= VIEW ALL BUTTON =================
+          - label: "View All Properties Button Text"
+            name: "view_all_btn"
+            widget: "string"
+
+          # ================= FOOTER =================
+          - label: "Footer Logo Text"
+            name: "footer_logo"
+            widget: "string"
+
+          - label: "Footer Description"
+            name: "footer_desc"
+            widget: "text"
+
+          - label: "Footer Social Label"
+            name: "footer_social_label"
+            widget: "string"
+
+          - label: "Facebook URL"
+            name: "footer_facebook"
+            widget: "string"
+
+          - label: "Instagram URL"
+            name: "footer_instagram"
+            widget: "string"
+
+          - label: "WhatsApp URL"
+            name: "footer_whatsapp"
+            widget: "string"
+
+          - label: "Quick Links Heading"
+            name: "footer_links_heading"
+            widget: "string"
+
+          - label: "Footer Link - Home"
+            name: "footer_link_home"
+            widget: "string"
+
+          - label: "Footer Link - Properties"
+            name: "footer_link_properties"
+            widget: "string"
+
+          - label: "Footer Link - Blog"
+            name: "footer_link_blog"
+            widget: "string"
+
+          - label: "Footer Link - About"
+            name: "footer_link_about"
+            widget: "string"
+
+          - label: "Footer Link - Contact"
+            name: "footer_link_contact"
+            widget: "string"
+
+          - label: "We Serve Heading"
+            name: "footer_serve_heading"
+            widget: "string"
+
+          - label: "Footer Location 1"
+            name: "footer_location_1"
+            widget: "string"
+
+          - label: "Footer Location 2"
+            name: "footer_location_2"
+            widget: "string"
+
+          - label: "Footer Location 3"
+            name: "footer_location_3"
+            widget: "string"
+
+          - label: "Contact Heading"
+            name: "footer_contact_heading"
+            widget: "string"
+
+          - label: "Contact Address"
+            name: "footer_address"
+            widget: "string"
+
+          - label: "Contact Phone"
+            name: "footer_phone"
+            widget: "string"
+
+          - label: "Contact Email"
+            name: "footer_email"
+            widget: "string"
+
+          - label: "Copyright Text"
+            name: "footer_copyright"
+            widget: "string"
+
+          - label: "Privacy Policy Text"
+            name: "footer_privacy"
+            widget: "string"
+
+          - label: "Terms of Service Text"
+            name: "footer_terms"
+            widget: "string"
+
+# End of homepage configuration
+
+
+
+  # ================= BLOG PAGE CONFIGURATION =================
+            # ===== BLOG PAGE - STATIC CONTENT =====
+  - name: "blogpage_content"
+    label: "Blog Page Settings"
+    files:
+      - file: "content/blogpage.json"
+        label: "Blog Page Info"
+        name: "blogpage"
+        fields:
+          
+          # ================= HEADER / NAVBAR =================
+          - label: "Logo Image"
+            name: "blog_brand_logo"
+            widget: "image"
+
+          - label: "Brand Tagline"
+            name: "blog_brand_tagline"
+            widget: "string"
+
+          - label: "Navigation Link - Home"
+            name: "blog_nav_link_home"
+            widget: "string"
+
+          - label: "Navigation Link - Houses & Plots"
+            name: "blog_nav_link_properties"
+            widget: "string"
+
+          - label: "Navigation Link - Blog"
+            name: "blog_nav_link_blog"
+            widget: "string"
+
+          - label: "Navigation Link - About"
+            name: "blog_nav_link_about"
+            widget: "string"
+
+          - label: "Navigation Link - Contact"
+            name: "blog_nav_link_contact"
+            widget: "string"
+
+          # ================= HERO SECTION =================
+          - label: "Hero Label"
+            name: "blog_hero_label"
+            widget: "string"
+
+          - label: "Hero Title"
+            name: "blog_hero_title"
+            widget: "text"
+
+          - label: "Hero Description"
+            name: "blog_hero_desc"
+            widget: "text"
+
+          # ================= FOOTER =================
+          - label: "Footer Logo Text"
+            name: "footer_logo"
+            widget: "string"
+
+          - label: "Footer Description"
+            name: "footer_desc"
+            widget: "text"
+
+          - label: "Footer Social Label"
+            name: "footer_social_label"
+            widget: "string"
+
+          - label: "Facebook URL"
+            name: "footer_facebook"
+            widget: "string"
+
+          - label: "Instagram URL"
+            name: "footer_instagram"
+            widget: "string"
+
+          - label: "WhatsApp URL"
+            name: "footer_whatsapp"
+            widget: "string"
+
+          - label: "Quick Links Heading"
+            name: "footer_links_heading"
+            widget: "string"
+
+          - label: "Footer Link - Home"
+            name: "footer_link_home"
+            widget: "string"
+
+          - label: "Footer Link - Properties"
+            name: "footer_link_properties"
+            widget: "string"
+
+          - label: "Footer Link - Blog"
+            name: "footer_link_blog"
+            widget: "string"
+
+          - label: "Footer Link - About"
+            name: "footer_link_about"
+            widget: "string"
+
+          - label: "Footer Link - Contact"
+            name: "footer_link_contact"
+            widget: "string"
+
+          - label: "We Serve Heading"
+            name: "footer_serve_heading"
+            widget: "string"
+
+          - label: "Footer Location 1"
+            name: "footer_location_1"
+            widget: "string"
+
+          - label: "Footer Location 2"
+            name: "footer_location_2"
+            widget: "string"
+
+          - label: "Footer Location 3"
+            name: "footer_location_3"
+            widget: "string"
+
+          - label: "Contact Heading"
+            name: "footer_contact_heading"
+            widget: "string"
+
+          - label: "Contact Address"
+            name: "footer_address"
+            widget: "string"
+
+          - label: "Contact Phone"
+            name: "footer_phone"
+            widget: "string"
+
+          - label: "Contact Email"
+            name: "footer_email"
+            widget: "string"
+
+          - label: "Copyright Text"
+            name: "footer_copyright"
+            widget: "string"
+
+          - label: "Privacy Policy Text"
+            name: "footer_privacy"
+            widget: "string"
+
+          - label: "Terms of Service Text"
+            name: "footer_terms"
+            widget: "string"
+
+  # ================= BLOG POSTS COLLECTION (ADD/EDIT/DELETE) =================
+  - name: "blogs"
+    label: "Blog Articles"
+    folder: "content/blogs"
+    create: true                    # Allows adding new blogs
+    delete: true                    # Allows deleting blogs
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Blog ID"
+        name: "blog_id"
+        widget: "string"
+        hint: "Unique ID like blog-1, blog-2, etc."
+
+      - label: "Preview Image"
+        name: "preview_image"
+        widget: "image"
+
+      - label: "Category Tag"
+        name: "tag"
+        widget: "select"
+        options:
+          - "Market Insights"
+          - "Buying Guide"
+          - "Investment Tips"
+          - "Legal Advice"
+          - "Property News"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "MMMM D, YYYY"
+
+      - label: "Preview Title"
+        name: "preview_title"
+        widget: "string"
+
+      - label: "Preview Description"
+        name: "preview_desc"
+        widget: "text"
+        hint: "Short description for preview card"
+
+      - label: "Full Article Title"
+        name: "article_title"
+        widget: "string"
+
+      - label: "Full Article Image"
+        name: "article_image"
+        widget: "image"
+
+      - label: "Full Article Content"
+        name: "content"
+        widget: "markdown"
+        hint: "Full blog article content with formatting"
+
+      - label: "Read More Button Text"
+        name: "read_more_text"
+        widget: "string"
+        default: "Read More"
+
+      - label: "Share Button Text"
+        name: "share_text"
+        widget: "string"
+        default: "Share"
+
+# End of blogpage configuration
+
+
+
+  # ================= ABOUT PAGE CONFIGURATION =================
+  - name: "aboutpage_content"
+    label: "About Page Content"
+    files:
+      - file: "content/aboutpage.json"
+        label: "About Page"
+        name: "aboutpage"
+        fields:
+          
+          # ================= HEADER / NAVBAR =================
+          - label: "Logo Image"
+            name: "about_brand_logo"
+            widget: "image"
+            hint: "Logo in header/navbar"
+
+          - label: "Brand Tagline"
+            name: "about_brand_tagline"
+            widget: "string"
+
+          - label: "Navigation Link - Home"
+            name: "about_nav_link_home"
+            widget: "string"
+
+          - label: "Navigation Link - Houses & Plots"
+            name: "about_nav_link_properties"
+            widget: "string"
+
+          - label: "Navigation Link - Blog"
+            name: "about_nav_link_blog"
+            widget: "string"
+
+          - label: "Navigation Link - About"
+            name: "about_nav_link_about"
+            widget: "string"
+
+          - label: "Navigation Link - Contact"
+            name: "about_nav_link_contact"
+            widget: "string"
+
+          # ================= HERO SECTION =================
+          - label: "Hero Label"
+            name: "about_hero_label"
+            widget: "string"
+
+          - label: "Hero Title"
+            name: "about_hero_title"
+            widget: "text"
+
+          - label: "Hero Description"
+            name: "about_hero_desc"
+            widget: "text"
+
+          # ================= HERO STATS =================
+          - label: "Stat 1 Number"
+            name: "about_stat_1_number"
+            widget: "string"
+
+          - label: "Stat 1 Label"
+            name: "about_stat_1_label"
+            widget: "string"
+
+          - label: "Stat 2 Number"
+            name: "about_stat_2_number"
+            widget: "string"
+
+          - label: "Stat 2 Label"
+            name: "about_stat_2_label"
+            widget: "string"
+
+          - label: "Stat 3 Number"
+            name: "about_stat_3_number"
+            widget: "string"
+
+          - label: "Stat 3 Label"
+            name: "about_stat_3_label"
+            widget: "string"
+
+          - label: "Stat 4 Number"
+            name: "about_stat_4_number"
+            widget: "string"
+
+          - label: "Stat 4 Label"
+            name: "about_stat_4_label"
+            widget: "string"
+
+          # ================= OUR JOURNEY SECTION =================
+          - label: "Journey Image"
+            name: "about_journey_image"
+            widget: "image"
+
+          - label: "Satisfaction Badge Number"
+            name: "about_satisfaction_number"
+            widget: "string"
+
+          - label: "Satisfaction Badge Label"
+            name: "about_satisfaction_label"
+            widget: "string"
+
+          - label: "Journey Label"
+            name: "about_journey_label"
+            widget: "string"
+
+          - label: "Journey Title"
+            name: "about_journey_title"
+            widget: "string"
+
+          - label: "Journey Text Content"
+            name: "about_journey_text"
+            widget: "markdown"
+            hint: "Full journey story with paragraphs"
+
+          - label: "Work With Us Button Text"
+            name: "about_work_btn"
+            widget: "string"
+
+          # ================= TEAM SECTION =================
+          - label: "Team Section Label"
+            name: "about_team_label"
+            widget: "string"
+
+          - label: "Team Section Title"
+            name: "about_team_title"
+            widget: "string"
+
+          - label: "Team Section Description"
+            name: "about_team_desc"
+            widget: "text"
+
+          # Team Member 1
+          - label: "Team Member 1 Image"
+            name: "team_1_image"
+            widget: "image"
+
+          - label: "Team Member 1 Name"
+            name: "team_1_name"
+            widget: "string"
+
+          - label: "Team Member 1 Role"
+            name: "team_1_role"
+            widget: "string"
+
+          # Team Member 2
+          - label: "Team Member 2 Image"
+            name: "team_2_image"
+            widget: "image"
+
+          - label: "Team Member 2 Name"
+            name: "team_2_name"
+            widget: "string"
+
+          - label: "Team Member 2 Role"
+            name: "team_2_role"
+            widget: "string"
+
+          # Team Member 3
+          - label: "Team Member 3 Image"
+            name: "team_3_image"
+            widget: "image"
+
+          - label: "Team Member 3 Name"
+            name: "team_3_name"
+            widget: "string"
+
+          - label: "Team Member 3 Role"
+            name: "team_3_role"
+            widget: "string"
+
+          # ================= CORE VALUES SECTION =================
+          - label: "Values Section Label"
+            name: "about_values_label"
+            widget: "string"
+
+          - label: "Values Section Title"
+            name: "about_values_title"
+            widget: "string"
+
+          - label: "Values Section Description"
+            name: "about_values_desc"
+            widget: "text"
+
+          # Value 1
+          - label: "Value 1 Title"
+            name: "value_1_title"
+            widget: "string"
+
+          - label: "Value 1 Description"
+            name: "value_1_desc"
+            widget: "text"
+
+          # Value 2
+          - label: "Value 2 Title"
+            name: "value_2_title"
+            widget: "string"
+
+          - label: "Value 2 Description"
+            name: "value_2_desc"
+            widget: "text"
+
+          # Value 3
+          - label: "Value 3 Title"
+            name: "value_3_title"
+            widget: "string"
+
+          - label: "Value 3 Description"
+            name: "value_3_desc"
+            widget: "text"
+
+          # Value 4
+          - label: "Value 4 Title"
+            name: "value_4_title"
+            widget: "string"
+
+          - label: "Value 4 Description"
+            name: "value_4_desc"
+            widget: "text"
+
+          # ================= CTA SECTION =================
+          - label: "CTA Title"
+            name: "about_cta_title"
+            widget: "text"
+
+          - label: "CTA Description"
+            name: "about_cta_desc"
+            widget: "text"
+
+          - label: "CTA Contact Button Text"
+            name: "about_cta_contact"
+            widget: "string"
+
+          - label: "CTA Properties Button Text"
+            name: "about_cta_properties"
+            widget: "string"
+
+          # ================= FOOTER =================
+          - label: "Footer Logo Text"
+            name: "footer_logo"
+            widget: "string"
+
+          - label: "Footer Description"
+            name: "footer_desc"
+            widget: "text"
+
+          - label: "Footer Social Label"
+            name: "footer_social_label"
+            widget: "string"
+
+          - label: "Facebook URL"
+            name: "footer_facebook"
+            widget: "string"
+
+          - label: "Instagram URL"
+            name: "footer_instagram"
+            widget: "string"
+
+          - label: "WhatsApp URL"
+            name: "footer_whatsapp"
+            widget: "string"
+
+          - label: "Quick Links Heading"
+            name: "footer_links_heading"
+            widget: "string"
+
+          - label: "Footer Link - Home"
+            name: "footer_link_home"
+            widget: "string"
+
+          - label: "Footer Link - Properties"
+            name: "footer_link_properties"
+            widget: "string"
+
+          - label: "Footer Link - Blog"
+            name: "footer_link_blog"
+            widget: "string"
+
+          - label: "Footer Link - About"
+            name: "footer_link_about"
+            widget: "string"
+
+          - label: "Footer Link - Contact"
+            name: "footer_link_contact"
+            widget: "string"
+
+          - label: "We Serve Heading"
+            name: "footer_serve_heading"
+            widget: "string"
+
+          - label: "Footer Location 1"
+            name: "footer_location_1"
+            widget: "string"
+
+          - label: "Footer Location 2"
+            name: "footer_location_2"
+            widget: "string"
+
+          - label: "Footer Location 3"
+            name: "footer_location_3"
+            widget: "string"
+
+          - label: "Contact Heading"
+            name: "footer_contact_heading"
+            widget: "string"
+
+          - label: "Contact Address"
+            name: "footer_address"
+            widget: "string"
+
+          - label: "Contact Phone"
+            name: "footer_phone"
+            widget: "string"
+
+          - label: "Contact Email"
+            name: "footer_email"
+            widget: "string"
+
+          - label: "Copyright Text"
+            name: "footer_copyright"
+            widget: "string"
+
+          - label: "Privacy Policy Text"
+            name: "footer_privacy"
+            widget: "string"
+
+          - label: "Terms of Service Text"
+            name: "footer_terms"
+            widget: "string"
+# End of aboutpage configuration
+
+
+
+
+  # ================= CONTACT PAGE CONFIGURATION =================
+  - name: "contactpage_content"
+    label: "Contact Page Content"
+    files:
+      - file: "content/contactpage.json"
+        label: "Contact Page"
+        name: "contactpage"
+        fields:
+          
+          # ================= HEADER / NAVBAR =================
+          - label: "Logo Image"
+            name: "contact_brand_logo"
+            widget: "image"
+            hint: "Logo in header/navbar"
+
+          - label: "Brand Tagline"
+            name: "contact_brand_tagline"
+            widget: "string"
+
+          - label: "Navigation Link - Home"
+            name: "contact_nav_link_home"
+            widget: "string"
+
+          - label: "Navigation Link - Houses & Plots"
+            name: "contact_nav_link_properties"
+            widget: "string"
+
+          - label: "Navigation Link - Blog"
+            name: "contact_nav_link_blog"
+            widget: "string"
+
+          - label: "Navigation Link - About"
+            name: "contact_nav_link_about"
+            widget: "string"
+
+          - label: "Navigation Link - Contact"
+            name: "contact_nav_link_contact"
+            widget: "string"
+
+          # ================= HERO SECTION =================
+          - label: "Hero Label"
+            name: "contact_hero_label"
+            widget: "string"
+
+          - label: "Hero Title"
+            name: "contact_hero_title"
+            widget: "string"
+
+          - label: "Hero Description"
+            name: "contact_hero_desc"
+            widget: "text"
+
+          # ================= CONTACT FORM SECTION =================
+          - label: "Contact Form Title"
+            name: "contact_form_title"
+            widget: "string"
+
+          - label: "Contact Form Description"
+            name: "contact_form_desc"
+            widget: "text"
+
+          - label: "Form Label - Name"
+            name: "label_name"
+            widget: "string"
+
+          - label: "Form Label - Email"
+            name: "label_email"
+            widget: "string"
+
+          - label: "Form Label - Message"
+            name: "label_message"
+            widget: "string"
+
+          # ================= CONTACT INFO CARDS =================
+          - label: "Location Card Title"
+            name: "location_title"
+            widget: "string"
+
+          - label: "Location Text"
+            name: "location_text"
+            widget: "text"
+
+          - label: "Phone Card Title"
+            name: "phone_title"
+            widget: "string"
+
+          - label: "Phone Numbers Text"
+            name: "phone_text"
+            widget: "text"
+
+          - label: "Email Card Title"
+            name: "email_title"
+            widget: "string"
+
+          - label: "Email Text"
+            name: "email_text"
+            widget: "string"
+
+          # ================= SOCIAL MEDIA =================
+          - label: "Social Media Title"
+            name: "social_title"
+            widget: "string"
+
+          - label: "Facebook URL"
+            name: "social_facebook"
+            widget: "string"
+
+          - label: "Instagram URL"
+            name: "social_instagram"
+            widget: "string"
+
+          - label: "WhatsApp URL"
+            name: "social_whatsapp"
+            widget: "string"
+
+          # ================= OFFICE HOURS =================
+          - label: "Office Hours Title"
+            name: "hours_title"
+            widget: "string"
+
+          - label: "Weekdays Label"
+            name: "hours_weekdays"
+            widget: "string"
+
+          - label: "Weekdays Time"
+            name: "hours_weekdays_time"
+            widget: "string"
+
+          - label: "Saturday Label"
+            name: "hours_saturday"
+            widget: "string"
+
+          - label: "Saturday Time"
+            name: "hours_saturday_time"
+            widget: "string"
+
+          - label: "Sunday Label"
+            name: "hours_sunday"
+            widget: "string"
+
+          - label: "Sunday Time"
+            name: "hours_sunday_time"
+            widget: "string"
+
+          # ================= GOOGLE MAP =================
+          - label: "Google Map Embed URL"
+            name: "google_map"
+            widget: "string"
+            hint: "Full iframe src URL from Google Maps embed code"
+
+          # ================= FOOTER =================
+          - label: "Footer Logo Text"
+            name: "footer_logo"
+            widget: "string"
+
+          - label: "Footer Description"
+            name: "footer_desc"
+            widget: "text"
+
+          - label: "Footer Social Label"
+            name: "footer_social_label"
+            widget: "string"
+
+          - label: "Footer Facebook URL"
+            name: "footer_facebook"
+            widget: "string"
+
+          - label: "Footer Instagram URL"
+            name: "footer_instagram"
+            widget: "string"
+
+          - label: "Footer WhatsApp URL"
+            name: "footer_whatsapp"
+            widget: "string"
+
+          - label: "Quick Links Heading"
+            name: "footer_links_heading"
+            widget: "string"
+
+          - label: "Footer Link - Home"
+            name: "footer_link_home"
+            widget: "string"
+
+          - label: "Footer Link - Properties"
+            name: "footer_link_properties"
+            widget: "string"
+
+          - label: "Footer Link - Blog"
+            name: "footer_link_blog"
+            widget: "string"
+
+          - label: "Footer Link - About"
+            name: "footer_link_about"
+            widget: "string"
+
+          - label: "Footer Link - Contact"
+            name: "footer_link_contact"
+            widget: "string"
+
+          - label: "We Serve Heading"
+            name: "footer_serve_heading"
+            widget: "string"
+
+          - label: "Footer Location 1"
+            name: "footer_location_1"
+            widget: "string"
+
+          - label: "Footer Location 2"
+            name: "footer_location_2"
+            widget: "string"
+
+          - label: "Footer Location 3"
+            name: "footer_location_3"
+            widget: "string"
+
+          - label: "Contact Heading"
+            name: "footer_contact_heading"
+            widget: "string"
+
+          - label: "Footer Contact Address"
+            name: "footer_address"
+            widget: "string"
+
+          - label: "Footer Contact Phone"
+            name: "footer_phone"
+            widget: "string"
+
+          - label: "Footer Contact Email"
+            name: "footer_email"
+            widget: "string"
+
+          - label: "Copyright Text"
+            name: "footer_copyright"
+            widget: "string"
+
+          - label: "Privacy Policy Link Text"
+            name: "footer_privacy"
+            widget: "string"
+
+          - label: "Terms of Service Link Text"
+            name: "footer_terms"
+            widget: "string"
+# End of contactpage configuration
+
+
+
+
+  # ================= PROPERTY LISTING PAGE - STATIC CONTENT =================
+  - name: "propertypage_content"
+    label: "Property Listing Page Settings"
+    files:
+      - file: "content/propertypage.json"
+        label: "Property Page Info"
+        name: "propertypage"
+        fields:
+          
+          # ================= HEADER / NAVBAR =================
+          - label: "Logo Image"
+            name: "property_brand_logo"
+            widget: "image"
+
+          - label: "Brand Tagline"
+            name: "property_brand_tagline"
+            widget: "string"
+
+          - label: "Navigation Link - Home"
+            name: "property_nav_link_home"
+            widget: "string"
+
+          - label: "Navigation Link - Houses & Plots"
+            name: "property_nav_link_properties"
+            widget: "string"
+
+          - label: "Navigation Link - Blog"
+            name: "property_nav_link_blog"
+            widget: "string"
+
+          - label: "Navigation Link - About"
+            name: "property_nav_link_about"
+            widget: "string"
+
+          - label: "Navigation Link - Contact"
+            name: "property_nav_link_contact"
+            widget: "string"
+
+          # ================= HERO SECTION =================
+          - label: "Hero Title"
+            name: "property_hero_title"
+            widget: "text"
+
+          - label: "Hero Description"
+            name: "property_hero_desc"
+            widget: "text"
+
+          # ================= SEARCH & FILTERS =================
+          - label: "Search Placeholder Text"
+            name: "property_search_placeholder"
+            widget: "string"
+
+          - label: "Filter Button - All Properties"
+            name: "filter_all"
+            widget: "string"
+
+          - label: "Filter Button - Plot"
+            name: "filter_plot"
+            widget: "string"
+
+          - label: "Filter Button - House"
+            name: "filter_house"
+            widget: "string"
+
+          - label: "Filter Button - House & Plot"
+            name: "filter_house_plot"
+            widget: "string"
+
+          # ================= FOOTER =================
+          - label: "Footer Logo Text"
+            name: "footer_logo"
+            widget: "string"
+
+          - label: "Footer Description"
+            name: "footer_desc"
+            widget: "text"
+
+          - label: "Footer Social Label"
+            name: "footer_social_label"
+            widget: "string"
+
+          - label: "Facebook URL"
+            name: "footer_facebook"
+            widget: "string"
+
+          - label: "Instagram URL"
+            name: "footer_instagram"
+            widget: "string"
+
+          - label: "WhatsApp URL"
+            name: "footer_whatsapp"
+            widget: "string"
+
+          - label: "Quick Links Heading"
+            name: "footer_links_heading"
+            widget: "string"
+
+          - label: "Footer Link - Home"
+            name: "footer_link_home"
+            widget: "string"
+
+          - label: "Footer Link - Properties"
+            name: "footer_link_properties"
+            widget: "string"
+
+          - label: "Footer Link - Blog"
+            name: "footer_link_blog"
+            widget: "string"
+
+          - label: "Footer Link - About"
+            name: "footer_link_about"
+            widget: "string"
+
+          - label: "Footer Link - Contact"
+            name: "footer_link_contact"
+            widget: "string"
+
+          - label: "We Serve Heading"
+            name: "footer_serve_heading"
+            widget: "string"
+
+          - label: "Footer Location 1"
+            name: "footer_location_1"
+            widget: "string"
+
+          - label: "Footer Location 2"
+            name: "footer_location_2"
+            widget: "string"
+
+          - label: "Footer Location 3"
+            name: "footer_location_3"
+            widget: "string"
+
+          - label: "Contact Heading"
+            name: "footer_contact_heading"
+            widget: "string"
+
+          - label: "Contact Address"
+            name: "footer_address"
+            widget: "string"
+
+          - label: "Contact Phone"
+            name: "footer_phone"
+            widget: "string"
+
+          - label: "Contact Email"
+            name: "footer_email"
+            widget: "string"
+
+          - label: "Copyright Text"
+            name: "footer_copyright"
+            widget: "string"
+
+          - label: "Privacy Policy Text"
+            name: "footer_privacy"
+            widget: "string"
+
+          - label: "Terms of Service Text"
+            name: "footer_terms"
+            widget: "string"
+
+  # ================= PROPERTY DETAILS PAGE - STATIC CONTENT =================
+  - name: "propertydetailspage_content"
+    label: "Property Details Page Settings"
+    files:
+      - file: "content/propertydetailspage.json"
+        label: "Property Details Page Info"
+        name: "propertydetailspage"
+        fields:
+          
+          # ================= HEADER / NAVBAR =================
+          - label: "Logo Image"
+            name: "details_brand_logo"
+            widget: "image"
+
+          - label: "Brand Tagline"
+            name: "details_brand_tagline"
+            widget: "string"
+
+          - label: "Navigation Link - Home"
+            name: "details_nav_link_home"
+            widget: "string"
+
+          - label: "Navigation Link - Houses & Plots"
+            name: "details_nav_link_properties"
+            widget: "string"
+
+          - label: "Navigation Link - Blog"
+            name: "details_nav_link_blog"
+            widget: "string"
+
+          - label: "Navigation Link - About"
+            name: "details_nav_link_about"
+            widget: "string"
+
+          - label: "Navigation Link - Contact"
+            name: "details_nav_link_contact"
+            widget: "string"
+
+          # ================= BACK BUTTON =================
+          - label: "Back Button Text"
+            name: "back_link"
+            widget: "string"
+
+          # ================= ENQUIRY BOX =================
+          - label: "Enquiry Box Title"
+            name: "enquiry_title"
+            widget: "string"
+
+          - label: "Call Us Label"
+            name: "enquiry_call_label"
+            widget: "string"
+
+          - label: "Phone Number 1"
+            name: "enquiry_phone_1"
+            widget: "string"
+
+          - label: "Phone Number 2"
+            name: "enquiry_phone_2"
+            widget: "string"
+
+          - label: "Email Label"
+            name: "enquiry_email_label"
+            widget: "string"
+
+          - label: "Email Address"
+            name: "enquiry_email"
+            widget: "string"
+
+          - label: "Enquire Now Button Text"
+            name: "enquiry_button"
+            widget: "string"
+
+          # ================= FOOTER =================
+          - label: "Footer Logo Text"
+            name: "footer_logo"
+            widget: "string"
+
+          - label: "Footer Description"
+            name: "footer_desc"
+            widget: "text"
+
+          - label: "Footer Social Label"
+            name: "footer_social_label"
+            widget: "string"
+
+          - label: "Facebook URL"
+            name: "footer_facebook"
+            widget: "string"
+
+          - label: "Instagram URL"
+            name: "footer_instagram"
+            widget: "string"
+
+          - label: "WhatsApp URL"
+            name: "footer_whatsapp"
+            widget: "string"
+
+          - label: "Quick Links Heading"
+            name: "footer_links_heading"
+            widget: "string"
+
+          - label: "Footer Link - Home"
+            name: "footer_link_home"
+            widget: "string"
+
+          - label: "Footer Link - Properties"
+            name: "footer_link_properties"
+            widget: "string"
+
+          - label: "Footer Link - Blog"
+            name: "footer_link_blog"
+            widget: "string"
+
+          - label: "Footer Link - About"
+            name: "footer_link_about"
+            widget: "string"
+
+          - label: "Footer Link - Contact"
+            name: "footer_link_contact"
+            widget: "string"
+
+          - label: "We Serve Heading"
+            name: "footer_serve_heading"
+            widget: "string"
+
+          - label: "Footer Location 1"
+            name: "footer_location_1"
+            widget: "string"
+
+          - label: "Footer Location 2"
+            name: "footer_location_2"
+            widget: "string"
+
+          - label: "Footer Location 3"
+            name: "footer_location_3"
+            widget: "string"
+
+          - label: "Contact Heading"
+            name: "footer_contact_heading"
+            widget: "string"
+
+          - label: "Contact Address"
+            name: "footer_address"
+            widget: "string"
+
+          - label: "Contact Phone"
+            name: "footer_phone"
+            widget: "string"
+
+          - label: "Contact Email"
+            name: "footer_email"
+            widget: "string"
+
+          - label: "Copyright Text"
+            name: "footer_copyright"
+            widget: "string"
+
+          - label: "Privacy Policy Text"
+            name: "footer_privacy"
+            widget: "string"
+
+          - label: "Terms of Service Text"
+            name: "footer_terms"
+            widget: "string"
+
+  # ================= PROPERTIES COLLECTION (ADD/EDIT/DELETE) =================
+  - name: "properties"
+    label: "Properties"
+    folder: "content/properties"
+    create: true
+    delete: true
+    slug: "property-{{fields.property_id}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - label: "Property ID"
+        name: "property_id"
+        widget: "string"
+        hint: "Unique ID like 101, 102, 103, etc."
+
+      - label: "Property Title/Name"
+        name: "name"
+        widget: "string"
+
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - "House"
+          - "Plot"
+          - "House & Plot"
+
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - label: "🟢 Available"
+            value: "available"
+          - label: "🔴 Sold Out"
+            value: "sold"
+          - label: "🟡 Temporarily Reserved"
+            value: "negotiation"
+        default: "available"
+
+      - label: "Price (in Lakhs - for sorting)"
+        name: "price"
+        widget: "number"
+        hint: "Enter price in lakhs. E.g., 75 for ₹75 lakhs, 150 for ₹1.5 crore"
+
+      - label: "Price Display"
+        name: "priceDisplay"
+        widget: "string"
+        hint: "Formatted price like ₹48,00,000 or ₹48,00,000 (Negotiable)"
+
+      - label: "Featured Image (Front-facing photo)"
+        name: "featured_image"
+        widget: "image"
+        hint: "Main photo shown in listing card and first in slideshow"
+
+      - label: "Additional Images (for slideshow)"
+        name: "additional_images"
+        widget: "list"
+        field: {label: Image, name: image, widget: image}
+        hint: "Upload multiple images for property slideshow"
+
+      - label: "Location City (for listing card)"
+        name: "location_city"
+        widget: "string"
+        hint: "Just city name, e.g., Pala, Kottayam"
+
+      - label: "Full Address (for details page)"
+        name: "location_full"
+        widget: "text"
+        hint: "Complete address with street, landmarks, district, state"
+
+      - label: "Short Description (for listing card)"
+        name: "short_description"
+        widget: "text"
+        hint: "Brief description for property card preview"
+
+      - label: "Long Description (for details page)"
+        name: "long_description"
+        widget: "markdown"
+        hint: "Detailed property description with paragraphs"
+
+      - label: "Built-up Area (sq ft)"
+        name: "builtUpArea"
+        widget: "string"
+        required: false
+        hint: "Only for House/House & Plot. Leave blank or 0 if not applicable"
+
+      - label: "Plot Size"
+        name: "plotSize"
+        widget: "string"
+        hint: "In cents or sq ft"
+
+      - label: "Bedrooms"
+        name: "bedrooms"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Only for House/House & Plot. Use 0 if not applicable"
+
+      - label: "Bathrooms"
+        name: "bathrooms"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Only for House/House & Plot. Use 0 if not applicable"
+
+      - label: "Floors"
+        name: "floors"
+        widget: "number"
+        required: false
+        default: 0
+        hint: "Only for House/House & Plot. Use 0 if not applicable"
+
+      - label: "Amenities"
+        name: "amenities"
+        widget: "list"
+        field: {label: Amenity, name: amenity, widget: string}
+        hint: "Add amenities one by one. Click + to add more"
+
+      - label: "Nearby Landmarks"
+        name: "nearbyLandmarks"
+        widget: "list"
+        field: {label: Landmark, name: landmark, widget: string}
+        hint: "E.g., Hospital - 3km, School - 2km"
+
+      - label: "Other Features"
+        name: "otherFeatures"
+        widget: "list"
+        field: {label: Feature, name: feature, widget: string}
+        hint: "Additional property features"
+
+      - label: "Date Added"
+        name: "date_added"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        hint: "Used for sorting by newest/oldest"
+# End of propertylistingpage configuration

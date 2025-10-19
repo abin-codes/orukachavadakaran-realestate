@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kerala Real Estate | Get in Touch</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR SECTION ==================== -->
+    <header class="contact-header" id="contact-header">
+        <nav class="contact-nav" id="contact-nav">
+            <!-- Logo and Brand -->
+            <a href="index.html" class="contact-nav-brand" data-cms="contact-brand">
+                <div class="contact-brand-logo" data-cms="contact-brand-logo">
+                    <img src="images/logo.png" alt="Real Estate Logo" class="contact-logo-img">
+                </div>
+                <p class="contact-brand-tagline" data-cms="contact-brand-tagline">REAL ESTATE KERALA</p>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <div class="contact-nav-menu" id="contact-nav-menu">
+                <a href="index.html" class="contact-nav-link" data-cms="contact-nav-link-home">Home</a>
+                <a href="property.html" class="contact-nav-link" data-cms="contact-nav-link-properties">Houses & Plots</a>
+                <a href="blog.html" class="contact-nav-link" data-cms="contact-nav-link-blog">Blog</a>
+                <a href="about.html" class="contact-nav-link" data-cms="contact-nav-link-about">About</a>
+                <a href="contact.html" class="contact-nav-link active" data-cms="contact-nav-link-contact">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="contact-nav-toggle" id="contact-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="contact-hero" id="contact-hero">
+        <div class="contact-hero-content">
+            <p class="contact-hero-label" data-cms="contact-hero-label">GET IN TOUCH</p>
+            <h1 class="contact-hero-title" data-cms="contact-hero-title">Let's Connect</h1>
+            <p class="contact-hero-desc" data-cms="contact-hero-desc">
+                Have questions or ready to find your perfect property? We're here to help!
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT FORM & INFO SECTION ==================== -->
+<section class="contact-main-section" id="contact-main-section">
+    <div class="contact-container">
+        
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+            <h2 class="contact-form-title" data-cms="contact-form-title">Send us a Message</h2>
+            <p class="contact-form-desc" data-cms="contact-form-desc">
+                Fill out the form below and we'll get back to you within 24 hours
+            </p>
+
+            <!-- ✅ UPDATED FOR formbold -->
+            <!-- Removed data-netlify and hidden form-name field -->
+            <!-- action now points to your formbold endpoint -->
+            <form id="contact-form"
+                  action="https://formbold.com/s/3dkyE" 
+                  method="POST"
+                  class="contact-form"
+                  data-cms="contact-form">
+                
+                <!-- Name Field -->
+                <div class="contact-form-group">
+                    <label for="contact-name" class="contact-form-label" data-cms="label-name">Your Name</label>
+                    <input type="text" id="contact-name" name="name" class="contact-form-input" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="contact-form-group">
+                    <label for="contact-email" class="contact-form-label" data-cms="label-email">Email Address</label>
+                    <input type="email" id="contact-email" name="email" class="contact-form-input" placeholder="your.email@example.com" required>
+                </div>
+
+                <!-- Message Field -->
+                <div class="contact-form-group">
+                    <label for="contact-message" class="contact-form-label" data-cms="label-message">Your Message (Include your phone number at last after your message or enquiry)</label>
+                    <textarea id="contact-message" name="message" class="contact-form-textarea" placeholder="Tell us about your requirements, preferred location, budget, etc..." rows="6" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="contact-form-submit">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+
+
+            <!-- Contact Info Sidebar -->
+            <div class="contact-info-sidebar">
+                <!-- Location Info -->
+                <div class="contact-info-card" data-cms="contact-location-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info-content">
+                        <h3 class="contact-info-title" data-cms="location-title">Location</h3>
+                        <p class="contact-info-text" data-cms="location-text">
+                            Kottayam, Kerala<br>India
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Phone Info -->
+                <div class="contact-info-card" data-cms="contact-phone-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-info-content">
+                        <h3 class="contact-info-title" data-cms="phone-title">Phone Numbers</h3>
+                        <p class="contact-info-text" data-cms="phone-text">
+                            +91 8129952316<br>+91 7907269538
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Email Info -->
+                <div class="contact-info-card" data-cms="contact-email-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info-content">
+                        <h3 class="contact-info-title" data-cms="email-title">Email</h3>
+                        <p class="contact-info-text" data-cms="email-text">
+                            orukachavadakaran@gmail.com
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="contact-social-card" data-cms="contact-social-card">
+                    <h3 class="contact-social-title" data-cms="social-title">Connect with us</h3>
+                    <div class="contact-social-icons">
+                        <a href="#" class="contact-social-icon" data-cms="social-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="contact-social-icon" data-cms="social-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="contact-social-icon" data-cms="social-whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Office Hours -->
+                <div class="contact-hours-card" data-cms="contact-hours-card">
+                    <div class="contact-hours-header">
+                        <div class="contact-hours-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="contact-hours-title" data-cms="hours-title">Office Hours</h3>
+                    </div>
+                    <div class="contact-hours-list">
+                        <div class="contact-hours-item">
+                            <span class="contact-hours-day" data-cms="hours-weekdays">Monday - Friday</span>
+                            <span class="contact-hours-time" data-cms="hours-weekdays-time">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="contact-hours-item">
+                            <span class="contact-hours-day" data-cms="hours-saturday">Saturday</span>
+                            <span class="contact-hours-time" data-cms="hours-saturday-time">9:00 AM - 2:00 PM</span>
+                        </div>
+                        <div class="contact-hours-item">
+                            <span class="contact-hours-day" data-cms="hours-sunday">Sunday</span>
+                            <span class="contact-hours-time" data-cms="hours-sunday-time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== MAP SECTION ==================== -->
+    <section class="contact-map-section" id="contact-map-section">
+        <div class="contact-map-wrapper">
+            <!-- Google Maps Embed -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251429.31997555487!2d76.31652699999999!3d9.590981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062ba1e5db08a7%3A0x4e210f58b96c0a60!2sKottayam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1696786459376!5m2!1sen!2sin" 
+                class="contact-map-iframe"
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                data-cms="google-map"
+            ></iframe>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER DIVIDER ==================== -->
+    <div class="contact-footer-divider"></div>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="contact-footer" id="contact-footer">
+        <div class="contact-footer-content">
+            <!-- Brand Column -->
+            <div class="contact-footer-col contact-footer-brand">
+                <h4 class="contact-footer-logo" data-cms="footer-logo">ഒരു കച്ചവടക്കാരൻ</h4>
+                <p class="contact-footer-desc" data-cms="footer-desc">
+                    Your trusted partner for finding the perfect home and land in Kerala. We bring local expertise and genuine care to every transaction.
+                </p>
+                <!-- Social Links -->
+                <div class="contact-footer-social">
+                    <p class="contact-footer-social-label" data-cms="footer-social-label">Follow Us:</p>
+                    <div class="contact-social-icons-footer">
+                        <a href="#" class="contact-social-icon-footer" data-cms="footer-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="contact-social-icon-footer" data-cms="footer-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="contact-social-icon-footer" data-cms="footer-whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="contact-footer-col">
+                <h5 class="contact-footer-heading" data-cms="footer-links-heading">Quick Links</h5>
+                <ul class="contact-footer-links">
+                    <li><a href="index.html" data-cms="footer-link-home">Home</a></li>
+                    <li><a href="property.html" data-cms="footer-link-properties">Properties</a></li>
+                    <li><a href="blog.html" data-cms="footer-link-blog">Blog</a></li>
+                    <li><a href="about.html" data-cms="footer-link-about">About Us</a></li>
+                    <li><a href="contact.html" data-cms="footer-link-contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- We Serve Column -->
+            <div class="contact-footer-col">
+                <h5 class="contact-footer-heading" data-cms="footer-serve-heading">We Serve</h5>
+                <ul class="contact-footer-locations">
+                    <li data-cms="footer-location-1">• Kottayam</li>
+                    <li data-cms="footer-location-2">• Kanjirappally</li>
+                    <li data-cms="footer-location-3">• Pala</li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="contact-footer-col">
+                <h5 class="contact-footer-heading" data-cms="footer-contact-heading">Contact</h5>
+                <ul class="contact-footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-cms="footer-address">Kottayam, Kerala, India</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span data-cms="footer-phone">+91 8129952316<br>+91 7907269538</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span data-cms="footer-email">orukachavadakaran@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="contact-footer-bottom">
+            <p data-cms="footer-copyright">
+                © 2025 ഒരു കച്ചവടക്കാരൻ | All Rights Reserved.
+            </p>
+            <div class="contact-footer-legal">
+                <a href="privacy.html" data-cms="footer-privacy">Privacy Policy</a>
+                <a href="terms.html" data-cms="footer-terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+</html>

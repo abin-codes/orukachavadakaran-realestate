@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - Kerala Real Estate | Houses & Plots</title>
+    <link rel="stylesheet" href="property.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== HEADER / NAVBAR SECTION ==================== -->
+    <header class="property-header" id="property-header">
+        <nav class="property-nav" id="property-nav">
+            <!-- Logo and Brand (Clickable - redirects to home) -->
+            <a href="index.html" class="property-nav-brand" data-cms="property-brand">
+                <!-- Logo Image: 120px width x 50px height -->
+                <div class="property-brand-logo" data-cms="property-brand-logo">
+                    <img src="images/logo.png" alt="Real Estate Logo" class="property-logo-img">
+                </div>
+                <p class="property-brand-tagline" data-cms="property-brand-tagline">REAL ESTATE KERALA</p>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <div class="property-nav-menu" id="property-nav-menu">
+                <a href="index.html" class="property-nav-link" data-cms="property-nav-link-home">Home</a>
+                <a href="property.html" class="property-nav-link active" data-cms="property-nav-link-properties">Houses & Plots</a>
+                <a href="blog.html" class="property-nav-link" data-cms="property-nav-link-blog">Blog</a>
+                <a href="about.html" class="property-nav-link" data-cms="property-nav-link-about">About</a>
+                <a href="contact.html" class="property-nav-link" data-cms="property-nav-link-contact">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Toggle (Hamburger) -->
+            <div class="property-nav-toggle" id="property-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="property-hero" id="property-hero">
+        <div class="property-hero-overlay"></div>
+        <div class="property-hero-content">
+            <h1 class="property-hero-title" data-cms="property-hero-title">
+                Find Your <span class="highlight">Dream Property</span>
+            </h1>
+            <p class="property-hero-desc" data-cms="property-hero-desc">
+                Explore our curated collection of homes and land in Kerala
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== SEARCH & FILTER SECTION ==================== -->
+    <section class="property-search-section" id="property-search-section">
+        <div class="property-search-container">
+            <!-- Search Bar with Autocomplete -->
+            <div class="property-search-wrapper">
+                <div class="property-search-box">
+                    <i class="fas fa-search property-search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="property-search-input" 
+                        class="property-search-input" 
+                        placeholder="Search properties..."
+                        autocomplete="off"
+                        data-cms="property-search-placeholder"
+                    >
+                </div>
+                <!-- Autocomplete Suggestions -->
+                <div class="property-suggestions" id="property-suggestions"></div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="property-filters">
+                <!-- Category Filter -->
+                <div class="property-category-filter">
+                    <button class="property-category-btn active" data-category="all" data-cms="filter-all">
+                        All Properties
+                    </button>
+                    <button class="property-category-btn" data-category="plot" data-cms="filter-plot">
+                        Plot
+                    </button>
+                    <button class="property-category-btn" data-category="house" data-cms="filter-house">
+                        House
+                    </button>
+                    <button class="property-category-btn" data-category="house-plot" data-cms="filter-house-plot">
+                        House & Plot
+                    </button>
+                </div>
+
+                <!-- Sort Filter Dropdown -->
+                <div class="property-sort-wrapper">
+                    <select id="property-sort-select" class="property-sort-select" data-cms="sort-select">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                    <i class="fas fa-chevron-down property-sort-icon"></i>
+                </div>
+            </div>
+
+            <!-- Property Count -->
+            <div class="property-count-wrapper">
+                <p class="property-count" id="property-count" data-cms="property-count">
+                    Showing <span id="property-count-number">6</span> properties
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROPERTIES LISTING SECTION ==================== -->
+<section class="property-listing" id="property-listing">
+    <div class="property-grid" id="property-grid">
+        
+        <!-- 
+        ==================== GUIDE TO ADD NEW PROPERTY ====================
+        
+        To add a new property, copy the entire property card structure below and modify:
+        
+        1. data-property-id: Unique ID (increment from last property)
+        2. data-category: "plot", "house", or "house-plot"
+        3. data-price: Numeric price in LAKHS (e.g., 75 for ₹75,00,000)
+        4. data-date: Date in YYYY-MM-DD format (for sorting)
+        5. data-location: Location name (for search)
+        6. data-title: Property title (for search)
+        7. Image src: Property image URL
+        8. Badge: "Plot", "House", or "House & Plot"
+        9. Location icon text
+        10. Title
+        11. Description
+        12. Price Display: Will auto-format (e.g., 75 lakhs → ₹75,00,000)
+        
+        Note: Price is stored in lakhs for sorting, but displayed with commas
+        
+        Example:
+        <div class="property-card" data-property-id="7" data-category="house" data-price="80" ...>
+            ...
+            <span class="property-card-price" data-price-lakhs="80">₹80,00,000</span>
+        </div>
+        
+        ============================================================
+        -->
+
+        <!-- Property Card 1 -->
+        <div class="property-card" data-property-id="101" data-category="house" data-price="75" data-date="2025-10-08" data-location="Pala" data-title="3BHK Modern Villa" data-cms="property-1">
+            <div class="property-card-image">
+                <img src="images/property/101-first.jpg" alt="3BHK Modern Villa" data-cms="property-1-image">
+                <span class="property-card-badge" data-cms="property-1-badge">House</span>
+                <span class="property-card-location" data-cms="property-1-location">
+                    <i class="fas fa-map-marker-alt"></i> Pala
+                </span>
+            </div>
+            <div class="property-card-content">
+                <h3 class="property-card-title" data-cms="property-1-title">3BHK Modern Villa</h3>
+                <p class="property-card-desc" data-cms="property-1-desc">
+                    Beautiful modern villa with contemporary architecture and spacious rooms.
+                </p>
+                <div class="property-card-footer">
+                    <span class="property-card-price" data-price-lakhs="75" data-cms="property-1-price">₹48,00,000</span>
+                    <button class="btn-details" data-cms="property-1-btn">
+                        Details <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Card 2 -->
+        <div class="property-card" data-property-id="102" data-category="house" data-price="55" data-date="2025-10-05" data-location="Kottayam" data-title="Traditional Kerala Home" data-cms="property-2">
+            <div class="property-card-image">
+                <img src="images/property/102-first.jpg" alt="Traditional Kerala Home" data-cms="property-2-image">
+                <span class="property-card-badge" data-cms="property-2-badge">House</span>
+                <span class="property-card-location" data-cms="property-2-location">
+                    <i class="fas fa-map-marker-alt"></i> Pala
+                </span>
+            </div>
+            <div class="property-card-content">
+                <h3 class="property-card-title" data-cms="property-2-title">Spacious 3BHK Contemporary Villa</h3>
+                <p class="property-card-desc" data-cms="property-2-desc">
+                    Stylish villa with modern architecture and generously sized rooms.
+                </p>
+                <div class="property-card-footer">
+                    <span class="property-card-price" data-price-lakhs="55" data-cms="property-2-price">₹75,00,000</span>
+                    <button class="btn-details" data-cms="property-2-btn">
+                        Details <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+     <!--   Property Card 3
+        <div class="property-card" data-property-id="3" data-category="plot" data-price="25" data-date="2025-10-03" data-location="Kanjirappally" data-title="Prime Land Plot" data-cms="property-3">
+            <div class="property-card-image">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800" alt="Prime Land Plot" data-cms="property-3-image">
+                <span class="property-card-badge property-card-badge-plot" data-cms="property-3-badge">Plot</span>
+                <span class="property-card-location" data-cms="property-3-location">
+                    <i class="fas fa-map-marker-alt"></i> Kanjirappally
+                </span>
+            </div>
+            <div class="property-card-content">
+                <h3 class="property-card-title" data-cms="property-3-title">Prime Land Plot</h3>
+                <p class="property-card-desc" data-cms="property-3-desc">
+                    Well-located plot perfect for building your dream home.
+                </p>
+                <div class="property-card-footer">
+                    <span class="property-card-price" data-price-lakhs="25" data-cms="property-3-price">₹25,00,000</span>
+                    <button class="btn-details" data-cms="property-3-btn">
+                        Details <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Property Card 4 
+        <div class="property-card" data-property-id="4" data-category="house-plot" data-price="90" data-date="2025-10-07" data-location="Pala" data-title="Villa with Land" data-cms="property-4">
+            <div class="property-card-image">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Villa with Land" data-cms="property-4-image">
+                <span class="property-card-badge property-card-badge-combo" data-cms="property-4-badge">House & Plot</span>
+                <span class="property-card-location" data-cms="property-4-location">
+                    <i class="fas fa-map-marker-alt"></i> Pala
+                </span>
+            </div>
+            <div class="property-card-content">
+                <h3 class="property-card-title" data-cms="property-4-title">Villa with Land</h3>
+                <p class="property-card-desc" data-cms="property-4-desc">
+                    Spacious villa with additional land area, perfect for expansion or gardening.
+                </p>
+                <div class="property-card-footer">
+                    <span class="property-card-price" data-price-lakhs="90" data-cms="property-4-price">₹90,00,000</span>
+                    <button class="btn-details" data-cms="property-4-btn">
+                        Details <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Property Card 5
+        <div class="property-card" data-property-id="5" data-category="plot" data-price="18" data-date="2025-10-02" data-location="Kottayam" data-title="Residential Plot" data-cms="property-5">
+            <div class="property-card-image">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" alt="Residential Plot" data-cms="property-5-image">
+                <span class="property-card-badge property-card-badge-plot" data-cms="property-5-badge">Plot</span>
+                <span class="property-card-location" data-cms="property-5-location">
+                    <i class="fas fa-map-marker-alt"></i> Kottayam
+                </span>
+            </div>
+            <div class="property-card-content">
+                <h3 class="property-card-title" data-cms="property-5-title">Residential Plot</h3>
+                <p class="property-card-desc" data-cms="property-5-desc">
+                    Affordable residential plot in prime location with all amenities nearby.
+                </p>
+                <div class="property-card-footer">
+                    <span class="property-card-price" data-price-lakhs="18" data-cms="property-5-price">₹18,00,000</span>
+                    <button class="btn-details" data-cms="property-5-btn">
+                        Details <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- Property Card 6 
+        <div class="property-card" data-property-id="6" data-category="house-plot" data-price="120" data-date="2025-10-06" data-location="Kanjirappally" data-title="Luxury Estate" data-cms="property-6">
+            <div class="property-card-image">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800" alt="Luxury Estate" data-cms="property-6-image">
+                <span class="property-card-badge property-card-badge-combo" data-cms="property-6-badge">House & Plot</span>
+                <span class="property-card-location" data-cms="property-6-location">
+                    <i class="fas fa-map-marker-alt"></i> Kanjirappally
+                </span>
+            </div>
+            <div class="property-card-content">
+                <h3 class="property-card-title" data-cms="property-6-title">Luxury Estate</h3>
+                <p class="property-card-desc" data-cms="property-6-desc">
+                    Premium estate with modern house and extensive land area for ultimate luxury living.
+                </p>
+                <div class="property-card-footer">
+                    <span class="property-card-price" data-price-lakhs="120" data-cms="property-6-price">₹1,20,00,000</span>
+                    <button class="btn-details" data-cms="property-6-btn">
+                        Details <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>-->
+
+    </div>
+
+    <!-- No Results Message (Hidden by default) -->
+    <div class="property-no-results" id="property-no-results" style="display: none;">
+        <i class="fas fa-search"></i>
+        <h3>No properties found</h3>
+        <p>Try adjusting your search or filters</p>
+    </div>
+</section>
+
+
+    <!-- ==================== FOOTER DIVIDER (Curved partition) ==================== -->
+    <div class="property-footer-divider"></div>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="property-footer" id="property-footer">
+        <div class="property-footer-content">
+            <!-- Brand Column -->
+            <div class="property-footer-col property-footer-brand">
+                <h4 class="property-footer-logo" data-cms="footer-logo">ഒരു കച്ചവടക്കാരൻ</h4>
+                <p class="property-footer-desc" data-cms="footer-desc">
+                    Your trusted partner for finding the perfect home and land in Kerala. We bring local expertise and genuine care to every transaction.
+                </p>
+                <!-- Social Links -->
+                <div class="property-footer-social">
+                    <p class="property-footer-social-label" data-cms="footer-social-label">Follow Us:</p>
+                    <div class="property-social-icons">
+                        <a href="#" class="property-social-icon" data-cms="footer-facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="property-social-icon" data-cms="footer-instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="property-social-icon" data-cms="footer-whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="property-footer-col">
+                <h5 class="property-footer-heading" data-cms="footer-links-heading">Quick Links</h5>
+                <ul class="property-footer-links">
+                    <li><a href="index.html" data-cms="footer-link-home">Home</a></li>
+                    <li><a href="property.html" data-cms="footer-link-properties">Properties</a></li>
+                    <li><a href="blog.html" data-cms="footer-link-blog">Blog</a></li>
+                    <li><a href="about.html" data-cms="footer-link-about">About Us</a></li>
+                    <li><a href="contact.html" data-cms="footer-link-contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- We Serve Column -->
+            <div class="property-footer-col">
+                <h5 class="property-footer-heading" data-cms="footer-serve-heading">We Serve</h5>
+                <ul class="property-footer-locations">
+                    <li data-cms="footer-location-1">• Kottayam</li>
+                    <li data-cms="footer-location-2">• Kanjirappally</li>
+                    <li data-cms="footer-location-3">• Pala</li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="property-footer-col">
+                <h5 class="property-footer-heading" data-cms="footer-contact-heading">Contact</h5>
+                <ul class="property-footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-cms="footer-address">Kottayam, Kerala, India</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span data-cms="footer-phone">+91 8129952316<br>+91 7907269538</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span data-cms="footer-email">orukachavadakkaran@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="property-footer-bottom">
+            <p data-cms="footer-copyright">
+                © 2025 ഒരു കച്ചവടക്കാരൻ | All Rights Reserved.
+            </p>
+            <div class="property-footer-legal">
+                <a href="privacy.html" data-cms="footer-privacy">Privacy Policy</a>
+                <a href="terms.html" data-cms="footer-terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="property.js"></script>
+</body>
+</html>

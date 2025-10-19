@@ -1,0 +1,67 @@
+{
+  "contact_brand_logo": "images/logo.png",
+  "contact_brand_tagline": "REAL ESTATE KERALA",
+  "contact_nav_link_home": "Home",
+  "contact_nav_link_properties": "Houses & Plots",
+  "contact_nav_link_blog": "Blog",
+  "contact_nav_link_about": "About",
+  "contact_nav_link_contact": "Contact",
+  
+  "contact_hero_label": "GET IN TOUCH",
+  "contact_hero_title": "Let's Connect",
+  "contact_hero_desc": "Have questions or ready to find your perfect property? We're here to help!",
+  
+  "contact_form_title": "Send us a Message",
+  "contact_form_desc": "Fill out the form below and we'll get back to you within 24 hours",
+  "label_name": "Your Name",
+  "label_email": "Email Address",
+  "label_message": "Your Message (Include your phone number at last after your message or enquiry)",
+  
+  "location_title": "Location",
+  "location_text": "Kottayam, Kerala\nIndia",
+  
+  "phone_title": "Phone Numbers",
+  "phone_text": "+91 8129952316\n+91 7907269538",
+  
+  "email_title": "Email",
+  "email_text": "orukachavadakaran@gmail.com",
+  
+  "social_title": "Connect with us",
+  "social_facebook": "#",
+  "social_instagram": "#",
+  "social_whatsapp": "#",
+  
+  "hours_title": "Office Hours",
+  "hours_weekdays": "Monday - Friday",
+  "hours_weekdays_time": "9:00 AM - 6:00 PM",
+  "hours_saturday": "Saturday",
+  "hours_saturday_time": "9:00 AM - 2:00 PM",
+  "hours_sunday": "Sunday",
+  "hours_sunday_time": "Closed",
+  
+  "google_map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251429.31997555487!2d76.31652699999999!3d9.590981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062ba1e5db08a7%3A0x4e210f58b96c0a60!2sKottayam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1696786459376!5m2!1sen!2sin",
+  
+  "footer_logo": "ഒരു കച്ചവടക്കാരൻ",
+  "footer_desc": "Your trusted partner for finding the perfect home and land in Kerala. We bring local expertise and genuine care to every transaction.",
+  "footer_social_label": "Follow Us:",
+  "footer_facebook": "#",
+  "footer_instagram": "#",
+  "footer_whatsapp": "#",
+  "footer_links_heading": "Quick Links",
+  "footer_link_home": "Home",
+  "footer_link_properties": "Properties",
+  "footer_link_blog": "Blog",
+  "footer_link_about": "About Us",
+  "footer_link_contact": "Contact",
+  "footer_serve_heading": "We Serve",
+  "footer_location_1": "• Kottayam",
+  "footer_location_2": "• Kanjirappally",
+  "footer_location_3": "• Pala",
+  "footer_contact_heading": "Contact",
+  "footer_address": "Kottayam, Kerala, India",
+  "footer_phone": "+91 8129952316<br>+91 7907269538",
+  "footer_email": "orukachavadakaran@gmail.com",
+  "footer_copyright": "© 2025 ഒരു കച്ചവടക്കാരൻ | All Rights Reserved.",
+  "footer_privacy": "Privacy Policy",
+  "footer_terms": "Terms of Service"
+}
