@@ -6,7 +6,7 @@ backend:
   name: github
   repo: abin-codes/orukachavadakaran-realestate  # Replace with your GitHub repo info
   branch: main
-  base_url: https://orukachavadakaran.pages.dev
+  base_url: https://orukachavadakaran.pages.dev 
   auth_endpoint: auth-callback
 
 media_folder: "images"                  # Folder where images are stored
