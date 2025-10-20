@@ -45,19 +45,19 @@ const viewAllBtn = document.getElementById('home-view-all-btn');
 
 if (exploreHousesBtn) {
     exploreHousesBtn.addEventListener('click', () => {
-        window.location.href = 'properties.html?category=houses';
+        window.location.href = 'property.html';
     });
 }
 
 if (viewPlotsBtn) {
     viewPlotsBtn.addEventListener('click', () => {
-        window.location.href = 'properties.html?category=plots';
+        window.location.href = 'property.html';
     });
 }
 
 if (viewAllBtn) {
     viewAllBtn.addEventListener('click', () => {
-        window.location.href = 'properties.html';
+        window.location.href = 'property.html';
     });
 }
 
