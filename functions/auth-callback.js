@@ -4,15 +4,16 @@ export async function onRequest(context) {
   
   const code = url.searchParams.get('code');
   const provider = url.searchParams.get('provider');
+  const state = url.searchParams.get('state');
 
   // If it's a Decap CMS request without GitHub code, redirect to GitHub OAuth
   if (provider === 'github' && !code) {
     const clientId = env.GITHUB_CLIENT_ID;
     const redirectUri = `${url.origin}/auth-callback`;
-    const scope = 'repo,user,read:org,write:repo_hook';  // ← Updated scopes
+    const scope = 'repo,user';
     
     // Redirect to GitHub OAuth
-    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`;
+    const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}&state=${state || ''}`;
     
     return Response.redirect(githubAuthUrl, 302);
   }
@@ -42,33 +43,37 @@ export async function onRequest(context) {
       return new Response(`GitHub OAuth error: ${data.error_description}`, { status: 400 });
     }
 
+    // Return content script that sends message to opener
     const html = `
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Authenticating...</title>
+  <meta charset="utf-8">
+  <title>Authorizing...</title>
 </head>
 <body>
+  <p>Authorizing...</p>
   <script>
-    (function() {
-      function receiveMessage(e) {
-        console.log("receiveMessage %o", e);
-        window.opener.postMessage(
-          'authorization:github:success:${JSON.stringify(data)}',
-          e.origin
-        );
-        window.removeEventListener("message", receiveMessage, false);
-      }
-      window.addEventListener("message", receiveMessage, false);
-      console.log("Sending message: %o", "authorizing:github");
-      window.opener.postMessage("authorizing:github", "*");
-    })()
+  (function() {
+    function receiveMessage(message) {
+      window.opener.postMessage(
+        'authorization:github:success:' + JSON.stringify(${JSON.stringify(data)}),
+        message.origin
+      );
+      window.removeEventListener("message", receiveMessage, false);
+    }
+    window.addEventListener("message", receiveMessage, false);
+    
+    window.opener.postMessage("authorizing:github", "*");
+  })();
   </script>
 </body>
 </html>`;
 
     return new Response(html, {
-      headers: { 'Content-Type': 'text/html' },
+      headers: { 
+        'Content-Type': 'text/html',
+      },
     });
 
   } catch (error) {
