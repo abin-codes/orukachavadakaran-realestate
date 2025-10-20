@@ -2,18 +2,14 @@ export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   
-  // Log all parameters for debugging
-  console.log('All URL params:', Object.fromEntries(url.searchParams));
-  
   const code = url.searchParams.get('code');
   const provider = url.searchParams.get('provider');
-  const site_id = url.searchParams.get('site_id');
 
   // If it's a Decap CMS request without GitHub code, redirect to GitHub OAuth
   if (provider === 'github' && !code) {
     const clientId = env.GITHUB_CLIENT_ID;
     const redirectUri = `${url.origin}/auth-callback`;
-    const scope = url.searchParams.get('scope') || 'repo,user';
+    const scope = 'repo,user,read:org,write:repo_hook';  // ← Updated scopes
     
     // Redirect to GitHub OAuth
     const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`;
