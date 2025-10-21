@@ -5,24 +5,25 @@ export async function onRequest(context) {
   const code = url.searchParams.get('code');
   const provider = url.searchParams.get('provider');
 
-  // Step 1: If Decap CMS initiates auth, redirect to GitHub
+  // Step 1: Redirect to GitHub for authorization
   if (provider === 'github' && !code) {
     const clientId = env.GITHUB_CLIENT_ID;
     const redirectUri = `${url.origin}/auth-callback`;
-    const scope = 'repo,user';
+    const scope = 'public_repo,user';
     
+    console.log('🔁 Redirecting to GitHub auth with:', clientId, redirectUri);
     const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`;
-    
     return Response.redirect(githubAuthUrl, 302);
   }
 
-  // Step 2: Handle GitHub's callback with code
+  // Step 2: Handle GitHub callback
   if (!code) {
+    console.error('❌ No authorization code provided');
     return new Response('No authorization code provided', { status: 400 });
   }
 
   try {
-    // Exchange code for token
+    console.log('🔐 Exchanging code for token...');
     const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: {
@@ -37,45 +38,37 @@ export async function onRequest(context) {
     });
 
     const data = await tokenResponse.json();
+    console.log('✅ GitHub response data:', data);
 
     if (data.error) {
+      console.error('❌ GitHub OAuth error:', data.error_description);
       return new Response(`GitHub OAuth error: ${data.error_description}`, { status: 400 });
     }
 
-    // Return HTML that sends token back to CMS
+    // Send token back to CMS
     const html = `
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Authorizing...</title>
-  <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      var receiveMessage = function(event) {
-        window.opener.postMessage(
-          'authorization:github:success:' + JSON.stringify(${JSON.stringify(data)}),
-          event.origin
-        );
-      };
-      
-      window.addEventListener('message', receiveMessage, false);
-      window.opener.postMessage('authorizing:github', '*');
-    });
-  </script>
-</head>
+<head><meta charset="utf-8"><title>Authorizing...</title></head>
 <body>
-  <p>Authorization successful. Redirecting...</p>
+  <script>
+    window.opener.postMessage(
+      'authorization:github:success:' + JSON.stringify(${JSON.stringify(data)}),
+      '*'
+    );
+    window.close();
+  </script>
+  <p>Authorization successful. You can close this window.</p>
 </body>
 </html>`;
 
     return new Response(html, {
       status: 200,
-      headers: {
-        'Content-Type': 'text/html; charset=utf-8',
-      },
+      headers: { 'Content-Type': 'text/html; charset=utf-8' },
     });
 
   } catch (error) {
+    console.error('💥 Authentication failed:', error);
     return new Response(`Authentication failed: ${error.message}`, { status: 500 });
   }
 }
