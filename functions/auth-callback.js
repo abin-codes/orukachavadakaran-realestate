@@ -8,10 +8,7 @@ export async function onRequest(context) {
   console.log('=== AUTH CALLBACK STARTED ===');
   console.log('Provider:', provider);
   console.log('Has code:', !!code);
-  console.log('Has CLIENT_ID:', !!env.GITHUB_CLIENT_ID);
-  console.log('Has CLIENT_SECRET:', !!env.GITHUB_CLIENT_SECRET);
 
-  // Step 1: If Decap CMS initiates auth, redirect to GitHub
   if (provider === 'github' && !code) {
     const clientId = env.GITHUB_CLIENT_ID;
     const redirectUri = `${url.origin}/auth-callback`;
@@ -20,14 +17,9 @@ export async function onRequest(context) {
     const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scope}`;
     
     console.log('→ Redirecting to GitHub OAuth');
-    console.log('  Client ID:', clientId);
-    console.log('  Redirect URI:', redirectUri);
-    console.log('  Scope:', scope);
-    
     return Response.redirect(githubAuthUrl, 302);
   }
 
-  // Step 2: Handle GitHub's callback with code
   if (!code) {
     console.log('ERROR: No authorization code');
     return new Response('No authorization code provided', { status: 400 });
@@ -36,79 +28,108 @@ export async function onRequest(context) {
   console.log('→ Exchanging code for token...');
 
   try {
-    const tokenRequest = {
-      client_id: env.GITHUB_CLIENT_ID,
-      client_secret: env.GITHUB_CLIENT_SECRET,
-      code: code,
-    };
-    
-    console.log('Token request (without secret):', {
-      client_id: tokenRequest.client_id,
-      code_length: code.length
-    });
-
-    // Exchange code for token
     const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       },
-      body: JSON.stringify(tokenRequest),
+      body: JSON.stringify({
+        client_id: env.GITHUB_CLIENT_ID,
+        client_secret: env.GITHUB_CLIENT_SECRET,
+        code: code,
+      }),
     });
 
     const data = await tokenResponse.json();
     
-    console.log('→ Token response received:');
-    console.log('  Has access_token:', !!data.access_token);
-    console.log('  Token type:', data.token_type);
-    console.log('  Scope:', data.scope);
-    console.log('  Error:', data.error);
-    
-    if (data.access_token) {
-      console.log('  Token preview:', data.access_token.substring(0, 10) + '...');
-    }
+    console.log('→ Token response:', {
+      hasToken: !!data.access_token,
+      scope: data.scope,
+      error: data.error
+    });
 
     if (data.error) {
-      console.log('ERROR from GitHub:', data.error_description);
+      console.log('ERROR:', data.error_description);
       return new Response(`GitHub OAuth error: ${data.error_description}`, { status: 400 });
     }
 
-    console.log('→ Returning auth HTML to browser');
-
-    // Return HTML that sends token back to CMS
     const html = `
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Authorizing...</title>
+  <title>DEBUG MODE - Authorizing...</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #1e1e1e; color: #fff; }
+    pre { background: #000; padding: 10px; overflow: auto; }
+  </style>
   <script>
     console.log('=== AUTH POPUP LOADED ===');
-    console.log('Token data received:', ${JSON.stringify(JSON.stringify(data))});
+    console.log('Token data:', ${JSON.stringify(JSON.stringify(data))});
+    
+    var countdown = 15;
     
     window.addEventListener('DOMContentLoaded', function() {
-      console.log('DOM loaded, setting up message handlers');
+      console.log('DOM loaded');
       
-      var receiveMessage = function(event) {
-        console.log('Received message from parent:', event.data);
+      var countdownEl = document.getElementById('countdown');
+      
+      // Countdown timer
+      var timer = setInterval(function() {
+        countdown--;
+        countdownEl.textContent = countdown;
+        console.log('Closing in', countdown, 'seconds...');
         
-        var message = 'authorization:github:success:' + ${JSON.stringify(JSON.stringify(data))};
-        console.log('Sending success message back:', message.substring(0, 50) + '...');
+        if (countdown <= 0) {
+          clearInterval(timer);
+          sendAuthMessage();
+        }
+      }, 1000);
+      
+      // Allow manual trigger
+      document.getElementById('sendNow').addEventListener('click', function() {
+        clearInterval(timer);
+        sendAuthMessage();
+      });
+      
+      function sendAuthMessage() {
+        console.log('Sending auth message to parent...');
         
-        window.opener.postMessage(message, event.origin);
-      };
+        var receiveMessage = function(event) {
+          console.log('Received message from parent:', event.data);
+          window.opener.postMessage(
+            'authorization:github:success:' + ${JSON.stringify(JSON.stringify(data))},
+            event.origin
+          );
+        };
+        
+        window.addEventListener('message', receiveMessage, false);
+        window.opener.postMessage('authorizing:github', '*');
+        
+        console.log('Message sent! Check parent window console.');
+      }
       
-      window.addEventListener('message', receiveMessage, false);
-      
-      console.log('Sending initial authorizing message');
-      window.opener.postMessage('authorizing:github', '*');
+      // Display token info
+      document.getElementById('tokenInfo').textContent = JSON.stringify(${JSON.stringify(data)}, null, 2);
     });
   </script>
 </head>
 <body>
-  <p>Authorization successful. Redirecting...</p>
-  <p style="font-size: 10px; color: #666;">Check console for debug info</p>
+  <h2>🐛 DEBUG MODE - Auth Callback</h2>
+  <p><strong>Window will auto-close in: <span id="countdown">15</span> seconds</strong></p>
+  <p><button id="sendNow" style="padding: 10px;">Send Auth Now & Close</button></p>
+  
+  <h3>Token Data:</h3>
+  <pre id="tokenInfo"></pre>
+  
+  <h3>Instructions:</h3>
+  <ol>
+    <li>Open DevTools Console (F12) on THIS window</li>
+    <li>Check console messages above</li>
+    <li>Take screenshot of console</li>
+    <li>Click "Send Auth Now" or wait for auto-send</li>
+  </ol>
 </body>
 </html>`;
 
@@ -121,7 +142,6 @@ export async function onRequest(context) {
 
   } catch (error) {
     console.log('EXCEPTION:', error.message);
-    console.error(error);
     return new Response(`Authentication failed: ${error.message}`, { status: 500 });
   }
 }
