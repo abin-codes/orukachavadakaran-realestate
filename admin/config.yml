@@ -11,8 +11,7 @@ backend:
 
 media_folder: "images"                  # Folder where images are stored
 public_folder: "/images"                # Path for images in website
-media_library:
-  name: cloudinary
+show_folders: true             # <— enables navigable image subfolders
 
 collections:
   - name: "homepage_content"            # Single file for all homepage data
