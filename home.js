@@ -139,6 +139,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ==================== CONSOLE MESSAGE ====================
-console.log('%c🏠 Kerala Real Estate Website Loaded Successfully! ', 'background: #C8B8A8; color: #2C3E50; font-size: 16px; font-weight: bold; padding: 10px;');
-console.log('%cFind your perfect home in Kerala 🌴', 'color: #C8B8A8; font-size: 12px;');
+// ==================== DYNAMIC HOMEPAGE STATS FROM JSON ====================
+fetch('/content/homepage.json')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('stat-properties').textContent = data.home_stat_properties + '+';
+    document.getElementById('stat-clients').textContent = data.home_stat_clients + '+';
+    document.getElementById('stat-locations').textContent = data.home_stat_locations;
+    const rating = document.getElementById('stat-rating');
+    if (rating) {
+      rating.textContent = data.home_rating_value;
+    }
+  })
+  .catch(error => {
+    console.error('Error loading homepage stats:', error);
+  });
