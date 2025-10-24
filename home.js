@@ -223,6 +223,18 @@ fetch('/content/homepage.json')
     document.querySelector('[data-cms="footer-copyright"]').innerHTML = data.footer_copyright || '';
     document.querySelector('[data-cms="footer-privacy"]').textContent = data.footer_privacy || '';
     document.querySelector('[data-cms="footer-terms"]').textContent = data.footer_terms || '';
+
+     // ===== LOGO IMAGE DYNAMIC UPDATE =====
+    var logoImg = document.querySelector('[data-cms="home-brand-logo"] img');
+    if (logoImg && data.home_brand_logo) logoImg.src = data.home_brand_logo;
+
+    // ===== PROPERTY 1 IMAGE DYNAMIC UPDATE =====
+    var property1Img = document.querySelector('[data-cms="property-1-image"]');
+    if (property1Img && data.property_1_image) property1Img.src = data.property_1_image;
+
+    // ===== PROPERTY 2 IMAGE DYNAMIC UPDATE =====
+    var property2Img = document.querySelector('[data-cms="property-2-image"]');
+    if (property2Img && data.property_2_image) property2Img.src = data.property_2_image;
   })
   .catch(err => {
     console.error('Failed to dynamically update homepage from CMS:', err);
