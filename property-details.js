@@ -514,3 +514,81 @@ window.addEventListener('beforeunload', () => {
 // ==================== CONSOLE MESSAGE ====================
 console.log('%c🏠 Property Details Page Loaded Successfully! ', 'background: #C8B8A8; color: #2C3E50; font-size: 16px; font-weight: bold; padding: 10px;');
 console.log(`%cProperty: ${currentProperty ? currentProperty.name : 'Loading...'}`, 'color: #C8B8A8; font-size: 12px;');
+
+
+// ==================== DYNAMIC CMS CONTENT UPDATER ====================
+const pageFile = window.location.pathname.includes('property-details')
+  ? '/content/propertydetailspage.json'
+  : '/content/propertypage.json';
+
+fetch(pageFile)
+  .then(res => res.json())
+  .then(data => {
+    // HEADER
+    const logoEl = document.querySelector('[data-cms$="brand-logo"] img');
+    if (logoEl && data.property_brand_logo) logoEl.src = data.property_brand_logo || data.details_brand_logo;
+
+    const taglineEl = document.querySelector('[data-cms$="brand-tagline"]');
+    if (taglineEl) taglineEl.textContent = data.property_brand_tagline || data.details_brand_tagline;
+
+    // Nav Links
+    document.querySelector('[data-cms$="nav-link-home"]').textContent = data.property_nav_link_home || data.details_nav_link_home;
+    document.querySelector('[data-cms$="nav-link-properties"]').textContent = data.property_nav_link_properties || data.details_nav_link_properties;
+    document.querySelector('[data-cms$="nav-link-blog"]').textContent = data.property_nav_link_blog || data.details_nav_link_blog;
+    document.querySelector('[data-cms$="nav-link-about"]').textContent = data.property_nav_link_about || data.details_nav_link_about;
+    document.querySelector('[data-cms$="nav-link-contact"]').textContent = data.property_nav_link_contact || data.details_nav_link_contact;
+
+    // HERO (if present)
+    if (data.property_hero_title) document.querySelector('[data-cms="property-hero-title"]').textContent = data.property_hero_title;
+    if (data.property_hero_desc) document.querySelector('[data-cms="property-hero-desc"]').textContent = data.property_hero_desc;
+
+    // SEARCH + FILTER BUTTON TEXT
+    const searchInput = document.querySelector('[data-cms="property-search-placeholder"]');
+    if (searchInput) searchInput.placeholder = data.property_search_placeholder;
+
+    if (data.filter_all) document.querySelector('[data-cms="filter-all"]').textContent = data.filter_all;
+    if (data.filter_plot) document.querySelector('[data-cms="filter-plot"]').textContent = data.filter_plot;
+    if (data.filter_house) document.querySelector('[data-cms="filter-house"]').textContent = data.filter_house;
+    if (data.filter_house_plot) document.querySelector('[data-cms="filter-house-plot"]').textContent = data.filter_house_plot;
+
+    // BACK BUTTON
+    const backBtn = document.querySelector('[data-cms="back-link"]');
+    if (backBtn && data.back_link) backBtn.textContent = data.back_link;
+
+    // ENQUIRY BOX (Only details page)
+    document.querySelector('[data-cms="enquiry-title"]')?.textContent = data.enquiry_title || '';
+    document.querySelector('[data-cms="enquiry-call-label"]')?.textContent = data.enquiry_call_label || '';
+    document.querySelector('[data-cms="enquiry-phone-1"]')?.textContent = data.enquiry_phone_1 || '';
+    document.querySelector('[data-cms="enquiry-phone-1"]')?.setAttribute('href', `tel:${data.enquiry_phone_1?.replace(/\s+/g, '')}`);
+    document.querySelector('[data-cms="enquiry-phone-2"]')?.textContent = data.enquiry_phone_2 || '';
+    document.querySelector('[data-cms="enquiry-phone-2"]')?.setAttribute('href', `tel:${data.enquiry_phone_2?.replace(/\s+/g, '')}`);
+    document.querySelector('[data-cms="enquiry-email-label"]')?.textContent = data.enquiry_email_label || '';
+    document.querySelector('[data-cms="enquiry-email"]')?.textContent = data.enquiry_email || '';
+    document.querySelector('[data-cms="enquiry-button"]')?.textContent = data.enquiry_button || '';
+
+    // FOOTER DYNAMIC UPDATE
+    document.querySelector('[data-cms="footer-logo"]').textContent = data.footer_logo;
+    document.querySelector('[data-cms="footer-desc"]').textContent = data.footer_desc;
+    document.querySelector('[data-cms="footer-social-label"]').textContent = data.footer_social_label;
+    document.querySelector('[data-cms="footer-facebook"]').href = data.footer_facebook;
+    document.querySelector('[data-cms="footer-instagram"]').href = data.footer_instagram;
+    document.querySelector('[data-cms="footer-whatsapp"]').href = data.footer_whatsapp;
+    document.querySelector('[data-cms="footer-links-heading"]').textContent = data.footer_links_heading;
+    document.querySelector('[data-cms="footer-link-home"]').textContent = data.footer_link_home;
+    document.querySelector('[data-cms="footer-link-properties"]').textContent = data.footer_link_properties;
+    document.querySelector('[data-cms="footer-link-blog"]').textContent = data.footer_link_blog;
+    document.querySelector('[data-cms="footer-link-about"]').textContent = data.footer_link_about;
+    document.querySelector('[data-cms="footer-link-contact"]').textContent = data.footer_link_contact;
+    document.querySelector('[data-cms="footer-serve-heading"]').textContent = data.footer_serve_heading;
+    document.querySelector('[data-cms="footer-location-1"]').textContent = data.footer_location_1;
+    document.querySelector('[data-cms="footer-location-2"]').textContent = data.footer_location_2;
+    document.querySelector('[data-cms="footer-location-3"]').textContent = data.footer_location_3;
+    document.querySelector('[data-cms="footer-contact-heading"]').textContent = data.footer_contact_heading;
+    document.querySelector('[data-cms="footer-address"]').textContent = data.footer_address;
+    document.querySelector('[data-cms="footer-phone"]').innerHTML = data.footer_phone;
+    document.querySelector('[data-cms="footer-email"]').textContent = data.footer_email;
+    document.querySelector('[data-cms="footer-copyright"]').textContent = data.footer_copyright;
+    document.querySelector('[data-cms="footer-privacy"]').textContent = data.footer_privacy;
+    document.querySelector('[data-cms="footer-terms"]').textContent = data.footer_terms;
+  })
+  .catch(err => console.error('Dynamic CMS load failed:', err));
