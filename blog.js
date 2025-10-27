@@ -222,3 +222,105 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ==================== CONSOLE MESSAGE ====================
 console.log('%c📝 Blog Page Loaded Successfully! ', 'background: #C8B8A8; color: #2C3E50; font-size: 16px; font-weight: bold; padding: 10px;');
 console.log('%cRead our latest real estate insights', 'color: #C8B8A8; font-size: 12px;');
+
+
+
+// ==================== DYNAMIC BLOG CMS & ARTICLE LOADER ====================
+fetch('/content/blogpage.json')
+  .then(res => res.json())
+  .then(data => {
+    // HEADER
+    document.querySelector('[data-cms="blog-brand-logo"] img').src = data.blog_brand_logo;
+    document.querySelector('[data-cms="blog-brand-tagline"]').textContent = data.blog_brand_tagline;
+    document.querySelector('[data-cms="blog-nav-link-home"]').textContent = data.blog_nav_link_home;
+    document.querySelector('[data-cms="blog-nav-link-properties"]').textContent = data.blog_nav_link_properties;
+    document.querySelector('[data-cms="blog-nav-link-blog"]').textContent = data.blog_nav_link_blog;
+    document.querySelector('[data-cms="blog-nav-link-about"]').textContent = data.blog_nav_link_about;
+    document.querySelector('[data-cms="blog-nav-link-contact"]').textContent = data.blog_nav_link_contact;
+    // HERO
+    document.querySelector('[data-cms="blog-hero-label"]').textContent = data.blog_hero_label;
+    document.querySelector('[data-cms="blog-hero-title"]').textContent = data.blog_hero_title;
+    document.querySelector('[data-cms="blog-hero-desc"]').textContent = data.blog_hero_desc;
+    // FOOTER
+    document.querySelector('[data-cms="footer-logo"]').textContent = data.footer_logo;
+    document.querySelector('[data-cms="footer-desc"]').textContent = data.footer_desc;
+    document.querySelector('[data-cms="footer-social-label"]').textContent = data.footer_social_label;
+    document.querySelector('[data-cms="footer-facebook"]').href = data.footer_facebook;
+    document.querySelector('[data-cms="footer-instagram"]').href = data.footer_instagram;
+    document.querySelector('[data-cms="footer-whatsapp"]').href = data.footer_whatsapp;
+    document.querySelector('[data-cms="footer-links-heading"]').textContent = data.footer_links_heading;
+    document.querySelector('[data-cms="footer-link-home"]').textContent = data.footer_link_home;
+    document.querySelector('[data-cms="footer-link-properties"]').textContent = data.footer_link_properties;
+    document.querySelector('[data-cms="footer-link-blog"]').textContent = data.footer_link_blog;
+    document.querySelector('[data-cms="footer-link-about"]').textContent = data.footer_link_about;
+    document.querySelector('[data-cms="footer-link-contact"]').textContent = data.footer_link_contact;
+    document.querySelector('[data-cms="footer-serve-heading"]').textContent = data.footer_serve_heading;
+    document.querySelector('[data-cms="footer-location-1"]').textContent = data.footer_location_1;
+    document.querySelector('[data-cms="footer-location-2"]').textContent = data.footer_location_2;
+    document.querySelector('[data-cms="footer-location-3"]').textContent = data.footer_location_3;
+    document.querySelector('[data-cms="footer-contact-heading"]').textContent = data.footer_contact_heading;
+    document.querySelector('[data-cms="footer-address"]').textContent = data.footer_address;
+    document.querySelector('[data-cms="footer-phone"]').innerHTML = data.footer_phone;
+    document.querySelector('[data-cms="footer-email"]').textContent = data.footer_email;
+    document.querySelector('[data-cms="footer-copyright"]').textContent = data.footer_copyright;
+    document.querySelector('[data-cms="footer-privacy"]').textContent = data.footer_privacy;
+    document.querySelector('[data-cms="footer-terms"]').textContent = data.footer_terms;
+  })
+  .catch(err => console.error('Dynamic CMS static blogpage load failed:', err));
+
+// ==== DYNAMIC BLOGS LOAD ====
+fetch('/content/blog-list.json')
+  .then(res => res.json())
+  .then(({ blogs }) => Promise.all(
+    blogs.map(name => fetch(`/content/blogs/${name}`).then(r => r.json()))
+  ))
+  .then(blogDataList => {
+    // Preview cards
+    const previewGrid = document.querySelector('.blog-preview-grid');
+    previewGrid.innerHTML = '';
+    // Detailed articles
+    const detailedSection = document.getElementById('blog-detailed-section');
+    detailedSection.innerHTML = '';
+
+    blogDataList.forEach(blog => {
+      // Preview card
+      const previewCard = document.createElement('div');
+      previewCard.className = 'blog-preview-card';
+      previewCard.setAttribute('data-blog-id', blog.blog_id);
+      previewCard.innerHTML = `
+        <div class="blog-preview-image">
+          <img src="${blog.preview_image}" alt="${blog.preview_title}">
+          <span class="blog-preview-tag">${blog.tag}</span>
+        </div>
+        <div class="blog-preview-content">
+          <p class="blog-preview-date"><i class="far fa-calendar"></i> ${blog.date}</p>
+          <h3 class="blog-preview-title">${blog.preview_title}</h3>
+          <p class="blog-preview-desc">${blog.preview_desc}</p>
+          <button class="blog-read-more" onclick="scrollToBlog('${blog.blog_id}')">${blog.read_more_text || 'Read More'} <i class="fas fa-arrow-right"></i></button>
+        </div>
+      `;
+      previewGrid.appendChild(previewCard);
+
+      // Article (detailed)
+      const article = document.createElement('article');
+      article.className = 'blog-article';
+      article.id = blog.blog_id;
+      article.innerHTML = `
+        <div class="blog-article-header">
+          <img src="${blog.article_image}" alt="${blog.article_title}" class="blog-article-image">
+          <div class="blog-article-overlay">
+            <span class="blog-article-tag">${blog.tag}</span>
+            <p class="blog-article-date"><i class="far fa-calendar"></i> ${blog.date}</p>
+            <h2 class="blog-article-title">${blog.article_title}</h2>
+          </div>
+        </div>
+        <div class="blog-article-content"><p>${blog.content.replace(/\n/g, '<br>')}</p></div>
+        <div class="blog-article-footer">
+          <p class="blog-helpful-text">Found this helpful?</p>
+          <button class="blog-share-btn" onclick="shareBlog('${blog.blog_id}')">${blog.share_text || 'Share'} <i class="fas fa-share-alt"></i></button>
+        </div>
+      `;
+      detailedSection.appendChild(article);
+    });
+  })
+  .catch(err => console.error('Dynamic blog articles loading failed:', err));
