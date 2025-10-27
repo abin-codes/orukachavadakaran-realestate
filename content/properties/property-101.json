@@ -1,26 +1,38 @@
 {
+  "plotSize": "8.50 cents",
   "property_id": "101",
-  "name": "3BHK Modern Villa",
-  "type": "House",
-  "status": "available",
+  "bathrooms": 3,
+  "builtUpArea": "1350 sq ft",
+  "floors": 1,
   "price": 75,
-  "priceDisplay": "₹48,00,000 (Negotiable)",
   "featured_image": "images/property/101-first.jpg",
+  "name": "3BHK Modern Villa",
+  "otherFeatures": [
+    "Premium Finishing",
+    "Peaceful Neighborhood",
+    "Water Facility"
+  ],
+  "date_added": "2025-10-08",
   "additional_images": [
     "images/property/101-second.jpg",
     "images/property/101-third.jpg"
   ],
+  "status": "sold",
   "location_city": "Pala",
-  "location_full": "Near Kuruvikkoodu, Pala-Ponkunnam Road, Kottayam, Kerala",
-  "short_description": "Beautiful modern villa with contemporary architecture and spacious rooms.",
-  "long_description": "This stunning modern villa near Kuruvikkoodu offers the perfect blend of design and comfort. With high-end materials and natural lighting, it's ideal for families seeking peace in a well-connected area.",
-  "builtUpArea": "1350 sq ft",
-  "plotSize": "8.50 cents",
+  "amenities": [
+    "Car Parking",
+    "Modern Kitchen",
+    "Premium Flooring"
+  ],
   "bedrooms": 3,
-  "bathrooms": 3,
-  "floors": 1,
-  "amenities": ["Car Parking", "Modern Kitchen", "Premium Flooring"],
-  "nearbyLandmarks": ["Hospital - 3km", "Pala Town - 4km", "Supermarket - 4.7km"],
-  "otherFeatures": ["Premium Finishing", "Peaceful Neighborhood", "Water Facility"],
-  "date_added": "2025-10-08"
+  "short_description": "Beautiful modern villa with contemporary architecture and spacious rooms.",
+  "location_full": "Near Kuruvikkoodu, Pala-Ponkunnam Road, Kottayam, Kerala",
+  "long_description": "This stunning modern villa near Kuruvikkoodu offers the perfect blend of design and comfort. With high-end materials and natural lighting, it's ideal for families seeking peace in a well-connected area.",
+  "priceDisplay": "₹48,00,000 (Negotiable)",
+  "type": "House",
+  "nearbyLandmarks": [
+    "Hospital - 3km",
+    "Pala Town - 4km",
+    "Supermarket - 4.7km"
+  ]
 }
