@@ -1,0 +1,35 @@
+{
+  "plotSize": "5 cents",
+  "property_id": "103",
+  "bathrooms": 4,
+  "builtUpArea": "3000",
+  "floors": 1,
+  "price": 89,
+  "featured_image": "https://unsplash.com/photos/gray-wooden-house-178j8tJrNlc",
+  "name": "Bangla",
+  "otherFeatures": [
+    "green environment",
+    "good neighbour"
+  ],
+  "date_added": "2025-10-27",
+  "additional_images": [
+    "https://unsplash.com/photos/gray-wooden-house-178j8tJrNlc"
+  ],
+  "status": "negotiation",
+  "location_city": "Pala",
+  "amenities": [
+    "garden",
+    "pool",
+    "solar powered"
+  ],
+  "bedrooms": 4,
+  "short_description": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound",
+  "location_full": "Mundakkayam, 1km from Bus Stand",
+  "long_description": "\n**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has *survived* not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was **popularised** in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+  "priceDisplay": "89,50,000 (Negotiable)",
+  "type": "House",
+  "nearbyLandmarks": [
+    "bus stand",
+    "hypermarket"
+  ]
+}
