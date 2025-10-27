@@ -4,7 +4,7 @@
   "bathrooms": 3,
   "builtUpArea": "1350 sq ft",
   "floors": 1,
-  "price": 75,
+  "price": 48,
   "featured_image": "images/property/101-first.jpg",
   "name": "3BHK Modern Villa",
   "otherFeatures": [
@@ -18,7 +18,7 @@
     "images/property/101-third.jpg"
   ],
   "status": "sold",
-  "location_city": "Pala",
+  "location_city": "Kottayam",
   "amenities": [
     "Car Parking",
     "Modern Kitchen",
